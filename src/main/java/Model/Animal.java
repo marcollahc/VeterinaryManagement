@@ -5,12 +5,16 @@ public class Animal {
     private String name;
     private String birthdate;
     private int sex;
+    private int specie_id;
+    private int client_id;
 
-    public Animal(int id, String name, String birthdate, int sex) {
+    public Animal(int id, String name, String birthdate, int sex, int specie_id, int client_id) {
         this.id = id;
         this.name = name;
         this.birthdate = birthdate;
         this.sex = sex;
+        this.specie_id = specie_id;
+        this.client_id = client_id;
     }
 
     public int getId() {
@@ -39,5 +43,21 @@ public class Animal {
 
     public void setSex(int sex) {
         this.sex = sex;
+    }
+
+    public int getSpecieId() {
+        return specie_id;
+    }
+
+    public void setSpecieId(int specie_id) {
+        this.specie_id = specie_id;
+    }
+
+    public int getClientId() {
+        return client_id;
+    }
+
+    public void setClientId(int client_id) {
+        this.client_id = client_id;
     }
 }

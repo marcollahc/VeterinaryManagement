@@ -36,7 +36,6 @@ public class ClientDAO {
                 client_update.setZipCode(zip_code);
                 client_update.setStreetNumber(street_number);
                 client_update.setStreetComplement(street_complement);
-
                 break;
             }
             index++;

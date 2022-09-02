@@ -33,7 +33,6 @@ public class MedicalAppointmentDAO {
                 medical_appointment_update.setHistory(history);
                 medical_appointment_update.setTreatmentId(treatment_id);
                 medical_appointment_update.setVeterinaryId(veterinary_id);
-
                 break;
             }
             index++;

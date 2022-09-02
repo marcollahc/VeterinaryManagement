@@ -23,6 +23,10 @@ public class AnimalDAO {
         return (List<Animal>) this.animals.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
     }
 
+    public List<Animal> retrieveByClientID(int id) {
+        return (List<Animal>) this.animals.stream().filter(item -> item.getClientId() == id).collect(Collectors.toList());
+    }
+
     public int update(int id, String name, String birthdate, int sex, int specie_id, int client_id) {
         int index = 0;
 
@@ -34,7 +38,6 @@ public class AnimalDAO {
                 animal_update.setSex(sex);
                 animal_update.setSpecieId(specie_id);
                 animal_update.setClientId(client_id);
-
                 break;
             }
             index++;

@@ -5,38 +5,32 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class MedicalExamDAO {
-    private List<Client> clients = new ArrayList<Client>();
-    private int client_id = 1;
+    private List<MedicalExam> medical_exams = new ArrayList<MedicalExam>();
+    private int medical_exam_id = 1;
 
-    public List<Client> create(String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {
-        Client client = new Client(client_id, name, document, phone, email, zip_code, street_number, street_complement);
-        this.clients.add(client);
-        client_id++;
-        return this.clients;
+    public List<MedicalExam> create(String exam_description, int medical_appointment_id) {
+        MedicalExam medical_exam = new MedicalExam(medical_exam_id, exam_description, medical_appointment_id);
+        this.medical_exams.add(medical_exam);
+        medical_exam_id++;
+        return this.medical_exams;
     }
 
-    public List<Client> retrieveAll() {
-        return this.clients;
+    public List<MedicalExam> retrieveAll() {
+        return this.medical_exams;
     }
 
-    public List<Client> retrieveByID(int id) {
-        return (List<Client>) this.clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
+    public List<MedicalExam> retrieveByID(int id) {
+        return (List<MedicalExam>) this.medical_exams.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
     }
 
-    public int update(int id, String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {
+    public int update(int id, String exam_description, int medical_appointment_id) {
         int index = 0;
 
-        for (Client client:this.clients) {
-            if (client.getId() == id) {
-                Client client_update = this.clients.get(index);
-                client_update.setName(name);
-                client_update.setDocument(document);
-                client_update.setPhone(phone);
-                client_update.setEmail(email);
-                client_update.setZipCode(zip_code);
-                client_update.setStreetNumber(street_number);
-                client_update.setStreetComplement(street_complement);
-
+        for (MedicalExam medical_exam:this.medical_exams) {
+            if (medical_exam.getId() == id) {
+                MedicalExam medical_exam_update = this.medical_exams.get(index);
+                medical_exam_update.setExamDescription(exam_description);
+                medical_exam_update.setMedicalAppointmentId(medical_appointment_id);
                 break;
             }
             index++;
@@ -48,9 +42,9 @@ public class MedicalExamDAO {
     public int delete(int id) {
         int index = 0;
 
-        for (Client client:this.clients) {
-            if (client.getId() == id) {
-                this.clients.remove(index);
+        for (MedicalExam medical_exam:this.medical_exams) {
+            if (medical_exam.getId() == id) {
+                this.medical_exams.remove(index);
                 break;
             }
             index++;

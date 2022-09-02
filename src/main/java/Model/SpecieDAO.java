@@ -5,38 +5,31 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SpecieDAO {
-    private List<Client> clients = new ArrayList<Client>();
-    private int client_id = 1;
+    private List<Specie> species = new ArrayList<Specie>();
+    private int specie_id = 1;
 
-    public List<Client> create(String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {
-        Client client = new Client(client_id, name, document, phone, email, zip_code, street_number, street_complement);
-        this.clients.add(client);
-        client_id++;
-        return this.clients;
+    public List<Specie> create(String name) {
+        Specie specie = new Specie(specie_id, name);
+        this.species.add(specie);
+        specie_id++;
+        return this.species;
     }
 
-    public List<Client> retrieveAll() {
-        return this.clients;
+    public List<Specie> retrieveAll() {
+        return this.species;
     }
 
-    public List<Client> retrieveByID(int id) {
-        return (List<Client>) this.clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
+    public List<Specie> retrieveByID(int id) {
+        return (List<Specie>) this.species.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
     }
 
-    public int update(int id, String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {
+    public int update(int id, String name) {
         int index = 0;
 
-        for (Client client:this.clients) {
-            if (client.getId() == id) {
-                Client client_update = this.clients.get(index);
-                client_update.setName(name);
-                client_update.setDocument(document);
-                client_update.setPhone(phone);
-                client_update.setEmail(email);
-                client_update.setZipCode(zip_code);
-                client_update.setStreetNumber(street_number);
-                client_update.setStreetComplement(street_complement);
-
+        for (Specie specie:this.species) {
+            if (specie.getId() == id) {
+                Specie specie_update = this.species.get(index);
+                specie_update.setName(name);
                 break;
             }
             index++;
@@ -48,9 +41,9 @@ public class SpecieDAO {
     public int delete(int id) {
         int index = 0;
 
-        for (Client client:this.clients) {
-            if (client.getId() == id) {
-                this.clients.remove(index);
+        for (Specie specie:this.species) {
+            if (specie.getId() == id) {
+                this.species.remove(index);
                 break;
             }
             index++;

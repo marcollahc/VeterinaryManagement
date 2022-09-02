@@ -1,3 +1,5 @@
+import Model.Animal;
+import Model.AnimalDAO;
 import Model.Client;
 import Model.ClientDAO;
 
@@ -37,6 +39,19 @@ public class VeterinaryManagement {
 
         for (Client client:clientDAO.retrieveAll()) {
             System.out.println("id=" + client.getId() + ", name=" + client.getName());
+        }
+
+        AnimalDAO animalDAO = new AnimalDAO();
+
+        System.out.println("Add animal to a client");
+
+        animalDAO.create("Tom", "2017-08-27", 1, 2, 2);
+        animalDAO.create("Jerry", "2020-11-03", 1, 5, 2);
+
+        System.out.println("List all animals from client 2");
+
+        for (Animal animal:animalDAO.retrieveByClientID(2)) {
+            System.out.println("id=" + animal.getId() + ", name=" + animal.getName() + ", client_id=" + animal.getClientId());
         }
     }
 }

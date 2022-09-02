@@ -5,38 +5,33 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class TreatmentDAO {
-    private List<Client> clients = new ArrayList<Client>();
-    private int client_id = 1;
+    private List<Treatment> treatments = new ArrayList<Treatment>();
+    private int treatment_id = 1;
 
-    public List<Client> create(String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {
-        Client client = new Client(client_id, name, document, phone, email, zip_code, street_number, street_complement);
-        this.clients.add(client);
-        client_id++;
-        return this.clients;
+    public List<Treatment> create(String start_date, String final_date, int animal_id) {
+        Treatment treatment = new Treatment(treatment_id, start_date, final_date, animal_id);
+        this.treatments.add(treatment);
+        treatment_id++;
+        return this.treatments;
     }
 
-    public List<Client> retrieveAll() {
-        return this.clients;
+    public List<Treatment> retrieveAll() {
+        return this.treatments;
     }
 
-    public List<Client> retrieveByID(int id) {
-        return (List<Client>) this.clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
+    public List<Treatment> retrieveByID(int id) {
+        return (List<Treatment>) this.treatments.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
     }
 
-    public int update(int id, String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {
+    public int update(int id, String start_date, String final_date, int animal_id) {
         int index = 0;
 
-        for (Client client:this.clients) {
-            if (client.getId() == id) {
-                Client client_update = this.clients.get(index);
-                client_update.setName(name);
-                client_update.setDocument(document);
-                client_update.setPhone(phone);
-                client_update.setEmail(email);
-                client_update.setZipCode(zip_code);
-                client_update.setStreetNumber(street_number);
-                client_update.setStreetComplement(street_complement);
-
+        for (Treatment treatment:this.treatments) {
+            if (treatment.getId() == id) {
+                Treatment treatment_update = this.treatments.get(index);
+                treatment_update.setStartDate(start_date);
+                treatment_update.setFinalDate(final_date);
+                treatment_update.setAnimalId(animal_id);
                 break;
             }
             index++;
@@ -48,9 +43,9 @@ public class TreatmentDAO {
     public int delete(int id) {
         int index = 0;
 
-        for (Client client:this.clients) {
-            if (client.getId() == id) {
-                this.clients.remove(index);
+        for (Treatment treatment:this.treatments) {
+            if (treatment.getId() == id) {
+                this.treatments.remove(index);
                 break;
             }
             index++;

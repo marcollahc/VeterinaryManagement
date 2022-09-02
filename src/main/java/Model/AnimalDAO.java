@@ -5,37 +5,35 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class AnimalDAO {
-    private List<Client> clients = new ArrayList<Client>();
-    private int client_id = 1;
+    private List<Animal> animals = new ArrayList<Animal>();
+    private int animal_id = 1;
 
-    public List<Client> create(String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {
-        Client client = new Client(client_id, name, document, phone, email, zip_code, street_number, street_complement);
-        this.clients.add(client);
-        client_id++;
-        return this.clients;
+    public List<Animal> create(String name, String birthdate, int sex, int specie_id, int client_id) {
+        Animal animal = new Animal(animal_id, name, birthdate, sex, specie_id, client_id);
+        this.animals.add(animal);
+        animal_id++;
+        return this.animals;
     }
 
-    public List<Client> retrieveAll() {
-        return this.clients;
+    public List<Animal> retrieveAll() {
+        return this.animals;
     }
 
-    public List<Client> retrieveByID(int id) {
-        return (List<Client>) this.clients.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
+    public List<Animal> retrieveByID(int id) {
+        return (List<Animal>) this.animals.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
     }
 
-    public int update(int id, String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {
+    public int update(int id, String name, String birthdate, int sex, int specie_id, int client_id) {
         int index = 0;
 
-        for (Client client:this.clients) {
-            if (client.getId() == id) {
-                Client client_update = this.clients.get(index);
-                client_update.setName(name);
-                client_update.setDocument(document);
-                client_update.setPhone(phone);
-                client_update.setEmail(email);
-                client_update.setZipCode(zip_code);
-                client_update.setStreetNumber(street_number);
-                client_update.setStreetComplement(street_complement);
+        for (Animal animal:this.animals) {
+            if (animal.getId() == id) {
+                Animal animal_update = this.animals.get(index);
+                animal_update.setName(name);
+                animal_update.setBirthdate(birthdate);
+                animal_update.setSex(sex);
+                animal_update.setSpecieId(specie_id);
+                animal_update.setClientId(client_id);
 
                 break;
             }
@@ -48,9 +46,9 @@ public class AnimalDAO {
     public int delete(int id) {
         int index = 0;
 
-        for (Client client:this.clients) {
-            if (client.getId() == id) {
-                this.clients.remove(index);
+        for (Animal animal:this.animals) {
+            if (animal.getId() == id) {
+                this.animals.remove(index);
                 break;
             }
             index++;

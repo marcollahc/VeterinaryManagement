@@ -5,7 +5,7 @@ import Model.ClientDAO;
 
 public class VeterinaryManagement {
     public static void main(String args[]) {
-        ClientDAO clientDAO = new ClientDAO();
+        /* ClientDAO clientDAO = new ClientDAO();
 
         System.out.println("Add client list");
 
@@ -52,6 +52,6 @@ public class VeterinaryManagement {
 
         for (Animal animal:animalDAO.retrieveByClientID(2)) {
             System.out.println("id=" + animal.getId() + ", name=" + animal.getName() + ", client_id=" + animal.getClientId());
-        }
+        } */
     }
 }

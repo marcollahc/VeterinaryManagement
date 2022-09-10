@@ -70,7 +70,6 @@ public class DAO {
         }
     }
 
-    // Create table SQLite
     protected final boolean createTable() {
         try {
             PreparedStatement stmt;

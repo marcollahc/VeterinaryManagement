@@ -1,18 +1,48 @@
 package Model;
 
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-public class AnimalDAO {
-    private List<Animal> animals = new ArrayList<Animal>();
-    private int animal_id = 1;
+public class AnimalDAO extends DAO {
+    private static AnimalDAO instance;
+
+    private AnimalDAO() {
+        getConnection();
+        createTable();
+    }
+
+    public static ClientDAO getInstance() {
+        return ((instance == null) ? (instance = new AnimalDAO()) : instance));
+    }
 
     public List<Animal> create(String name, String birthdate, int sex, int specie_id, int client_id) {
-        Animal animal = new Animal(animal_id, name, birthdate, sex, specie_id, client_id);
-        this.animals.add(animal);
-        animal_id++;
-        return this.animals;
+        try {
+            PreparedStatement statement;
+            statement = DAO.getConnection().prepareStatement("INSERT INTO animal (name, birthdate, sex, specie_id, client_id) VALUES (?, ?, ?, ?, ?)");
+            statement.setString(1, name);
+            statement.setString(2, birthdate);
+            statement.setString(3, String.valueOf(sex));
+            statement.setString(4, String.valueOf(specie_id));
+            statement.setString(5, String.valueOf(client_id));
+        } catch (SQLException exception) {
+            Logger.getLogger(AnimalDAO.class.getName()).log(Level.SEVERE, null, exception);
+        }
+
+        return this.retrieveByID(lastId("animal", "id"));
+    }
+
+    public boolean isLastEmpty() {
+        Animal lastAnimal = this.retrieveByID(lastId("animal", "id"));
+        if (lastAnimal != null) {
+            return lastAnimal.getName().isBlank();
+        }
+
+        return false;
     }
 
     public List<Animal> retrieveAll() {

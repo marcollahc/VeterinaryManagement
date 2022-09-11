@@ -1,55 +1,118 @@
 package Model;
 
-import java.util.ArrayList;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-public class MedicalExamDAO {
-    private List<MedicalExam> medical_exams = new ArrayList<MedicalExam>();
-    private int medical_exam_id = 1;
+public class MedicalExamDAO extends DAO {
+    private static MedicalExamDAO instance;
 
-    public List<MedicalExam> create(String exam_description, int medical_appointment_id) {
-        MedicalExam medical_exam = new MedicalExam(medical_exam_id, exam_description, medical_appointment_id);
-        this.medical_exams.add(medical_exam);
-        medical_exam_id++;
-        return this.medical_exams;
+    private MedicalExamDAO() {
+        getConnection();
+        createTable();
     }
 
-    public List<MedicalExam> retrieveAll() {
-        return this.medical_exams;
+    public static MedicalExamDAO getInstance() {
+        return ((instance == null) ? (instance = new MedicalExamDAO()) : instance);
     }
 
-    public List<MedicalExam> retrieveByID(int id) {
-        return (List<MedicalExam>) this.medical_exams.stream().filter(item -> item.getId() == id).collect(Collectors.toList());
-    }
-
-    public int update(int id, String exam_description, int medical_appointment_id) {
-        int index = 0;
-
-        for (MedicalExam medical_exam:this.medical_exams) {
-            if (medical_exam.getId() == id) {
-                MedicalExam medical_exam_update = this.medical_exams.get(index);
-                medical_exam_update.setExamDescription(exam_description);
-                medical_exam_update.setMedicalAppointmentId(medical_appointment_id);
-                break;
-            }
-            index++;
+    public MedicalExam create(String exam_description, int medical_appointment_id) {
+        try {
+            PreparedStatement statement;
+            statement = DAO.getConnection().prepareStatement("INSERT INTO medical_exam (exam_description, medical_appointment_id) VALUES (?, ?)");
+            statement.setString(1, exam_description);
+            statement.setInt(2, medical_appointment_id);
+            executeUpdate(statement);
+        } catch (SQLException exception) {
+            Logger.getLogger(MedicalExamDAO.class.getName()).log(Level.SEVERE, null, exception);
         }
 
-        return 1;
+        return this.retrieveByID(lastId("medical_exam", "id"));
     }
 
-    public int delete(int id) {
-        int index = 0;
-
-        for (MedicalExam medical_exam:this.medical_exams) {
-            if (medical_exam.getId() == id) {
-                this.medical_exams.remove(index);
-                break;
-            }
-            index++;
+    public boolean isLastEmpty() {
+        MedicalExam lastMedicalExam = this.retrieveByID(lastId("medical_exam", "id"));
+        if (lastMedicalExam != null) {
+            return lastMedicalExam.getExamDescription().isBlank();
         }
 
-        return 1;
+        return false;
+    }
+
+    private MedicalExam buildObject(ResultSet result_set) {
+        MedicalExam medical_exam = null;
+
+        try {
+            medical_exam = new MedicalExam(
+                result_set.getInt("id"),
+                result_set.getString("exam_description"),
+                result_set.getInt("medical_appointment_id")
+            );
+        } catch (SQLException exception) {
+            System.err.println("Exception: " + exception.getMessage());
+        }
+
+        return medical_exam;
+    }
+
+    public List retrieve(String query) {
+        List<MedicalExam> medical_exams = new ArrayList();
+        ResultSet result_set = getResultSet(query);
+
+        try {
+            while (result_set.next()) {
+                medical_exams.add(buildObject(result_set));
+            }
+        } catch (SQLException exception) {
+            System.err.println("Exception: " + exception.getMessage());
+        }
+
+        return medical_exams;
+    }
+
+    public List retrieveAll() {
+        return this.retrieve("SELECT * FROM medical_exam");
+    }
+
+    public List retrieveLast() {
+        return this.retrieve("SELECT * FROM medical_exam WHERE id = " + lastId("medical_exam", "id"));
+    }
+
+    public MedicalExam retrieveByID(int id) {
+        List<MedicalExam> medical_exams = this.retrieve("SELECT * FROM medical_exam WHERE id = " + id);
+
+        return (medical_exams.isEmpty() ? null : medical_exams.get(0));
+    }
+
+    public List retrieveByMedicalAppointmentId(String id) {
+        return this.retrieve("SELECT * FROM medical_exam WHERE medical_appointment_id = " + id);
+    }
+
+    public void update(MedicalExam medical_exam) {
+        try {
+            PreparedStatement statement;
+            statement = DAO.getConnection().prepareStatement("UPDATE medical_exam SET exam_description = ?, medical_appointment_id = ? WHERE id = ?");
+            statement.setString(1, medical_exam.getExamDescription());
+            statement.setInt(2, medical_exam.getMedicalAppointmentId());
+            statement.setInt(3, medical_exam.getId());
+            executeUpdate(statement);
+        } catch (SQLException e) {
+            System.err.println("Exception: " + e.getMessage());
+        }
+    }
+
+    public void delete(MedicalExam medical_exam) {
+        try {
+            PreparedStatement statement;
+            statement = DAO.getConnection().prepareStatement("DELETE FROM medical_exam WHERE id = ?");
+            statement.setInt(1, medical_exam.getId());
+            executeUpdate(statement);
+        } catch (SQLException exception) {
+            System.err.println("Exception: " + exception.getMessage());
+        }
     }
 }

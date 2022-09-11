@@ -29,7 +29,7 @@ public class ClientDAO extends DAO {
             statement.setString(3, phone);
             statement.setString(4, email);
             statement.setString(5, zip_code);
-            statement.setString(6, String.valueOf(street_number));
+            statement.setInt(6, street_number);
             statement.setString(7, street_complement);
             executeUpdate(statement);
         } catch (SQLException exception) {
@@ -60,7 +60,7 @@ public class ClientDAO extends DAO {
                 result_set.getString("email"),
                 result_set.getString("zip_code"),
                 result_set.getInt("street_number"),
-                result_set.getString(("street_complement"))
+                result_set.getString("street_complement")
             );
         } catch (SQLException exception) {
             System.err.println("Exception: " + exception.getMessage());
@@ -99,21 +99,21 @@ public class ClientDAO extends DAO {
     }
 
     public List retrieveBySimilarName(String name) {
-        return this.retrieve("SELECT * FROM client WHERE name = " + name);
+        return this.retrieve("SELECT * FROM client WHERE name LIKE '" + name + "'%");
     }
 
     public void update(Client client) {
         try {
             PreparedStatement statement;
-            statement = DAO.getConnection().prepareStatement("UPDATE client SET name = ?, document = ?, phone = ?, email = ?, zip_code = ?, street_number = ?, street_complement WHERE id = ?");
+            statement = DAO.getConnection().prepareStatement("UPDATE client SET name = ?, document = ?, phone = ?, email = ?, zip_code = ?, street_number = ?, street_complement = ? WHERE id = ?");
             statement.setString(1, client.getName());
             statement.setString(2, client.getDocument());
             statement.setString(3, client.getPhone());
             statement.setString(4, client.getEmail());
             statement.setString(5, client.getZipCode());
-            statement.setString(6, String.valueOf(client.getStreetNumber()));
+            statement.setInt(6, client.getStreetNumber());
             statement.setString(7, client.getStreetComplement());
-            statement.setString(8, String.valueOf(client.getId()));
+            statement.setInt(8, client.getId());
             executeUpdate(statement);
         } catch (SQLException e) {
             System.err.println("Exception: " + e.getMessage());

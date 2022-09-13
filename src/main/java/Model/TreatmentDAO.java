@@ -90,7 +90,7 @@ public class TreatmentDAO extends DAO {
         return (treatments.isEmpty() ? null : treatments.get(0));
     }
 
-    public List retrieveByAnimalId(String id) {
+    public List retrieveByAnimalId(int id) {
         return this.retrieve("SELECT * FROM treatment WHERE animal_id = " + id);
     }
 

@@ -123,7 +123,7 @@ public class DAO {
             stmt = DAO.getConnection().prepareStatement(
                 "CREATE TABLE IF NOT EXISTS specie (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "name VARCHAR" +
+                    "name VARCHAR UNIQUE" +
                 ");"
             );
             executeUpdate(stmt);

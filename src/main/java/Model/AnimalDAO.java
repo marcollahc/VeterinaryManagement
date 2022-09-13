@@ -20,13 +20,13 @@ public class AnimalDAO extends DAO {
         return ((instance == null) ? (instance = new AnimalDAO()) : instance);
     }
 
-    public Animal create(String name, String birthdate, String sex, int specie_id, int client_id) {
+    public Animal create(String name, String birthdate, int sex, int specie_id, int client_id) {
         try {
             PreparedStatement statement;
             statement = DAO.getConnection().prepareStatement("INSERT INTO animal (name, birthdate, sex, specie_id, client_id) VALUES (?, ?, ?, ?, ?)");
             statement.setString(1, name);
             statement.setString(2, birthdate);
-            statement.setString(3, sex);
+            statement.setInt(3, sex);
             statement.setInt(4, specie_id);
             statement.setInt(5, client_id);
             executeUpdate(statement);
@@ -94,10 +94,8 @@ public class AnimalDAO extends DAO {
         return (animals.isEmpty() ? null : animals.get(0));
     }
 
-    public Animal retrieveClientByID(int id) {
-        List<Animal> animals = this.retrieve("SELECT * FROM animal WHERE client_id = " + id);
-
-        return (animals.isEmpty() ? null : animals.get(0));
+    public List retrieveAnimalsByID(int id) {
+        return this.retrieve("SELECT * FROM animal WHERE client_id = " + id);
     }
 
     public List retrieveBySimilarName(String name) {

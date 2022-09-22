@@ -11,22 +11,26 @@ public class TestRetrieve {
     private JTextField textField1;
     private JButton button1;
     private JTextArea textArea1;
+    private JPanel MainPanel;
 
     public TestRetrieve() {
-        System.out.printf("Teste");
-        textArea1.setText("Teste");
-
-        button1.addMouseListener(new MouseAdapter() {
+        button1.addActionListener(new ActionListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
+            public void actionPerformed(ActionEvent actionEvent) {
+                List<Client> clients = ClientDAO.getInstance().retrieveAll();
 
-                List<Client> client_all = ClientDAO.getInstance().retrieveAll();
-
-                for (Client client:client_all) {
-                    textArea1.setText(client.getId() + ") " + client.getName() + "\n");
+                for (Client client : clients) {
+                    textArea1.append(client.getName() + "\n");
                 }
             }
         });
+    }
+
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("TestRetrieve");
+        frame.setContentPane(new TestRetrieve().MainPanel);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 }

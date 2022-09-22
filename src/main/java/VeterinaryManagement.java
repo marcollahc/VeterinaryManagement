@@ -3,12 +3,12 @@ import Model.*;
 import java.util.List;
 
 public class VeterinaryManagement {
-    public static void main(String args[]) {
-        /* System.out.println("Add client");
+    /* public static void main(String args[]) {
+        System.out.println("Add client");
 
         ClientDAO.getInstance().create("Teste Um", "12345678900", "+5519123456789", "test1@test.com.br", "01310909", 2134, "");
         ClientDAO.getInstance().create("Teste Dois", "12345678901", "+5519123456790", "test2@test.com.br", "01310910", 2135, "Andar 1");
-        ClientDAO.getInstance().create("Teste Três", "12345678902", "+5519123456791", "test1@test.com.br", "01310911", 2136, ""); */
+        ClientDAO.getInstance().create("Teste Três", "12345678902", "+5519123456791", "test1@test.com.br", "01310911", 2136, "");
 
         System.out.println("List all clients");
 
@@ -18,10 +18,10 @@ public class VeterinaryManagement {
             System.out.println("id=" + client.getId() + ", name=" + client.getName());
         }
 
-        /* System.out.println("Add animal to a client");
+        System.out.println("Add animal to a client");
 
         AnimalDAO.getInstance().create("Tom", "2017-08-27", 1, 2, 2);
-        AnimalDAO.getInstance().create("Jerry", "2020-11-03", 1, 5, 2); */
+        AnimalDAO.getInstance().create("Jerry", "2020-11-03", 1, 5, 2);
 
         System.out.println("List all animals from client 2");
 
@@ -31,9 +31,9 @@ public class VeterinaryManagement {
             System.out.println("id=" + animal.getId() + ", name=" + animal.getName() + ", client_id=" + animal.getClientId());
         }
 
-        /* System.out.println("Add animal species");
+        System.out.println("Add animal species");
 
-        SpecieDAO.getInstance().create("Répteis"); */
+        SpecieDAO.getInstance().create("Répteis");
 
         System.out.println("List all animal species");
 
@@ -43,9 +43,9 @@ public class VeterinaryManagement {
             System.out.println("id=" + specie.getId() + ", name=" + specie.getName());
         }
 
-        /* System.out.println("Add veterinary");
+        System.out.println("Add veterinary");
 
-        VeterinaryDAO.getInstance().create("Teste Um", "12345678900", "+5519123456789", "test1@test.com.br", "01310909", 2134, "", "123456"); */
+        VeterinaryDAO.getInstance().create("Teste Um", "12345678900", "+5519123456789", "test1@test.com.br", "01310909", 2134, "", "123456");
 
         System.out.println("List all veterinarians");
 
@@ -55,9 +55,9 @@ public class VeterinaryManagement {
             System.out.println("crmv=" + veterinary.getCrmv() + ", name=" + veterinary.getName());
         }
 
-        /* System.out.println("Add treatment");
+        System.out.println("Add treatment");
 
-        TreatmentDAO.getInstance().create("12/09/2022", "15/09/2022", 1); */
+        TreatmentDAO.getInstance().create("12/09/2022", "15/09/2022", 1);
 
         System.out.println("List all treatments of animal 1");
 
@@ -67,9 +67,9 @@ public class VeterinaryManagement {
             System.out.println("animal_id=" + treatment.getAnimalId() + ", start_date=" + treatment.getStartDate());
         }
 
-        /* System.out.println("Add an medical appointment");
+        System.out.println("Add an medical appointment");
 
-        MedicalAppointmentDAO.getInstance().create("12/09/2022", "Realizar exame de sangue, possivelmente anemia.", 1, 1); */
+        MedicalAppointmentDAO.getInstance().create("12/09/2022", "Realizar exame de sangue, possivelmente anemia.", 1, 1);
 
         System.out.println("List all medical appointments");
 
@@ -79,9 +79,9 @@ public class VeterinaryManagement {
             System.out.println("id=" + medical_appointment.getId() + ", date_appointment=" + medical_appointment.getDateAppointment() + ",history=" + medical_appointment.getHistory());
         }
 
-        /* System.out.println("Add an medical exam");
+        System.out.println("Add an medical exam");
 
-        MedicalExamDAO.getInstance().create("Exame de teste", 1); */
+        MedicalExamDAO.getInstance().create("Exame de teste", 1);
 
         System.out.println("List all medical exams");
 
@@ -90,5 +90,5 @@ public class VeterinaryManagement {
         for (MedicalExam medical_exam:medical_exams) {
             System.out.println("id=" + medical_exam.getId() + ", exame_description=" + medical_exam.getExamDescription());
         }
-    }
+    } */
 }

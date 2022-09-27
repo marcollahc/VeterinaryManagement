@@ -89,38 +89,6 @@ public class DAO {
             executeUpdate(stmt);
 
             stmt = DAO.getConnection().prepareStatement(
-                "CREATE TABLE IF NOT EXISTS animal (" +
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "name VARCHAR," +
-                    "birthdate INTEGER," +
-                    "sex VARCHAR," +
-                    "specie_id INTEGER," +
-                    "client_id INTEGER" +
-                ");"
-            );
-            executeUpdate(stmt);
-
-            stmt = DAO.getConnection().prepareStatement(
-                "CREATE TABLE IF NOT EXISTS medical_appointment (" +
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "date_appointment TEXT," +
-                    "history VARCHAR," +
-                    "treatment_id INTEGER," +
-                    "veterinary_id INTEGER" +
-                ");"
-            );
-            executeUpdate(stmt);
-
-            stmt = DAO.getConnection().prepareStatement(
-                "CREATE TABLE IF NOT EXISTS medical_exam (" +
-                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    "exam_description VARCHAR," +
-                    "medical_appointment_id INTEGER" + "" +
-                ");"
-            );
-            executeUpdate(stmt);
-
-            stmt = DAO.getConnection().prepareStatement(
                 "CREATE TABLE IF NOT EXISTS specie (" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "name VARCHAR UNIQUE" +
@@ -129,11 +97,28 @@ public class DAO {
             executeUpdate(stmt);
 
             stmt = DAO.getConnection().prepareStatement(
+                "CREATE TABLE IF NOT EXISTS animal (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "name VARCHAR," +
+                    "birthdate INTEGER," +
+                    "sex VARCHAR," +
+                    "specie_id INTEGER," +
+                    "client_id INTEGER," +
+                    "FOREIGN KEY (specie_id) REFERENCES specie(id)," +
+                    "FOREIGN KEY (client_id) REFERENCES client(id)" +
+                ");"
+            );
+            executeUpdate(stmt);
+
+
+
+            stmt = DAO.getConnection().prepareStatement(
                 "CREATE TABLE IF NOT EXISTS treatment(" +
                     "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                     "start_date VARCHAR," +
                     "final_date VARCHAR," +
-                    "animal_id INTEGER" +
+                    "animal_id INTEGER," +
+                    "FOREIGN KEY (animal_id) REFERENCES animal(id)" +
                 ");"
             );
             executeUpdate(stmt);
@@ -149,6 +134,29 @@ public class DAO {
                     "street_number INT," +
                     "street_complement VARCHAR," +
                     "crmv VARCHAR" +
+                ");"
+            );
+            executeUpdate(stmt);
+
+            stmt = DAO.getConnection().prepareStatement(
+                "CREATE TABLE IF NOT EXISTS medical_appointment (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "date_appointment TEXT," +
+                    "history VARCHAR," +
+                    "treatment_id INTEGER," +
+                    "veterinary_id INTEGER," +
+                    "FOREIGN KEY (treatment_id) REFERENCES treatment(id)," +
+                    "FOREIGN KEY (veterinary_id) REFERENCES veterinary(id)" +
+                ");"
+            );
+            executeUpdate(stmt);
+
+            stmt = DAO.getConnection().prepareStatement(
+                "CREATE TABLE IF NOT EXISTS medical_exam (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "exam_description VARCHAR," +
+                    "medical_appointment_id INTEGER," +
+                    "FOREIGN KEY (medical_appointment_id) REFERENCES medical_appointment(id)" +
                 ");"
             );
             executeUpdate(stmt);

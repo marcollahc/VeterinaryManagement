@@ -5,7 +5,6 @@
 package View;
 
 import Model.Client;
-import Model.ClientDAO;
 import java.util.List;
 
 /**
@@ -13,8 +12,8 @@ import java.util.List;
  * @author marcos-medeiros
  */
 public class ClientTableModel extends GenericTableModel {
-    public ClientTableModel(List vData) {
-        super(vData, new String[]{"Nome", "Email", "Telefone", "CPF", "CEP", "Número", "Complemento"});
+    public ClientTableModel(List v_data) {
+        super(v_data, new String[]{"Nome", "Email", "Telefone", "CPF", "CEP", "Número", "Complemento"});
     }
     
     @Override
@@ -31,7 +30,7 @@ public class ClientTableModel extends GenericTableModel {
             case 4:
                 return String.class;
             case 5:
-                return String.class;
+                return Integer.class;
             case 6:
                 return String.class;
             default:

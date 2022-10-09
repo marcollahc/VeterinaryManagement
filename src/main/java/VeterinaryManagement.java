@@ -3,8 +3,8 @@ import Model.*;
 import java.util.List;
 
 public class VeterinaryManagement {
-    public static void main(String args[]) {
-        System.out.println("Add client");
+    public static void main(String args[]) {        
+        /* System.out.println("Add client");
 
         ClientDAO.getInstance().create("Teste Um", "12345678900", "+5519123456789", "test1@test.com.br", "01310909", 2134, "");
         ClientDAO.getInstance().create("Teste Dois", "12345678901", "+5519123456790", "test2@test.com.br", "01310910", 2135, "Andar 1");
@@ -89,6 +89,6 @@ public class VeterinaryManagement {
 
         for (MedicalExam medical_exam:medical_exams) {
             System.out.println("id=" + medical_exam.getId() + ", exame_description=" + medical_exam.getExamDescription());
-        }
+        } */
     }
 }

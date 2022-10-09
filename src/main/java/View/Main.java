@@ -4,6 +4,8 @@
  */
 package View;
 
+import Model.ClientDAO;
+
 /**
  *
  * @author marcosmedeiros
@@ -235,17 +237,7 @@ public class Main extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Lista de clientes");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
+        jTable1.setModel(new ClientTableModel(Controller.Service.retrieveAllClients()));
         jScrollPane1.setViewportView(jTable1);
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -510,25 +502,14 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JTextField client_street_complement;
     private javax.swing.JTextField client_street_number;
     private javax.swing.JTextField client_zip_code;
-    private javax.swing.JTextField document1;
-    private javax.swing.JTextField email1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -537,7 +518,6 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -547,17 +527,11 @@ public class Main extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTextField name1;
-    private javax.swing.JTextField phone1;
     private javax.swing.JTextField specie_name;
-    private javax.swing.JTextField street_complement1;
-    private javax.swing.JTextField street_number1;
-    private javax.swing.JTextField zip_code1;
     // End of variables declaration//GEN-END:variables
 }

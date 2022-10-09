@@ -82,7 +82,7 @@ public class DAO {
                     phone VARCHAR,
                     email VARCHAR,
                     zip_code VARCHAR,
-                    street_number INT,
+                    street_number INTEGER,
                     street_complement VARCHAR
                 );
             """);
@@ -131,7 +131,7 @@ public class DAO {
                     phone VARCHAR,
                     email VARCHAR,
                     zip_code VARCHAR,
-                    street_number INT,
+                    street_number INTEGER,
                     street_complement VARCHAR,
                     crmv VARCHAR
                 );

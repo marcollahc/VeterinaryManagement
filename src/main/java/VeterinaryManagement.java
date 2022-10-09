@@ -1,9 +1,20 @@
-import Model.*;
-
-import java.util.List;
+import View.SystemScreen;
+import javax.swing.JFrame;
 
 public class VeterinaryManagement {
-    public static void main(String args[]) {        
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                // new SystemScreen().setVisible(true);
+                JFrame frame = new JFrame("Testing");
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.add(new SystemScreen());
+                frame.pack();
+                frame.setLocationRelativeTo(null);
+                frame.setVisible(true);
+            }
+        });
+        
         /* System.out.println("Add client");
 
         ClientDAO.getInstance().create("Teste Um", "12345678900", "+5519123456789", "test1@test.com.br", "01310909", 2134, "");

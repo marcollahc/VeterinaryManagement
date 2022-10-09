@@ -13,14 +13,14 @@ import java.util.List;
  */
 public class ClientTableModel extends GenericTableModel {
     public ClientTableModel(List v_data) {
-        super(v_data, new String[]{"Nome", "Email", "Telefone", "CPF", "CEP", "Número", "Complemento"});
+        super(v_data, new String[]{"ID", "Nome", "CPF", "Telefone", "Email", "CEP", "Número", "Complemento"});
     }
     
     @Override
     public Class<?> getColumnClass(int column_index) {
         switch (column_index) {
             case 0:
-                return String.class;
+                return Integer.class;
             case 1:
                 return String.class;
             case 2:
@@ -30,8 +30,10 @@ public class ClientTableModel extends GenericTableModel {
             case 4:
                 return String.class;
             case 5:
-                return Integer.class;
+                return String.class;
             case 6:
+                return Integer.class;
+            case 7:
                 return String.class;
             default:
                 throw new IndexOutOfBoundsException("column_index out of bounds");
@@ -44,18 +46,20 @@ public class ClientTableModel extends GenericTableModel {
         
         switch (column_index) {
             case 0:
-                return client.getName();
+                return client.getId();
             case 1:
-                return client.getEmail();
+                return client.getName();
             case 2:
-                return client.getPhone();
+                return client.getEmail();
             case 3:
-                return client.getDocument();
+                return client.getPhone();
             case 4:
-                return client.getZipCode();
+                return client.getDocument();
             case 5:
-                return client.getStreetNumber();
+                return client.getZipCode();
             case 6:
+                return client.getStreetNumber();
+            case 7:
                 return client.getStreetComplement();
             default:
                 throw new IndexOutOfBoundsException("column_index out of bounds");

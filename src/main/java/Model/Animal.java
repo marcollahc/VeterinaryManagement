@@ -1,5 +1,6 @@
 package Model;
 
+
 public class Animal {
     private int id;
     private String name;
@@ -18,11 +19,11 @@ public class Animal {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -30,7 +31,7 @@ public class Animal {
     }
 
     public String getBirthdate() {
-        return birthdate;
+        return this.birthdate;
     }
 
     public void setBirthdate(String birthdate) {
@@ -38,7 +39,7 @@ public class Animal {
     }
 
     public int getSex() {
-        return sex;
+        return this.sex;
     }
 
     public void setSex(int sex) {
@@ -46,7 +47,7 @@ public class Animal {
     }
 
     public int getSpecieId() {
-        return specie_id;
+        return this.specie_id;
     }
 
     public void setSpecieId(int specie_id) {
@@ -54,7 +55,7 @@ public class Animal {
     }
 
     public int getClientId() {
-        return client_id;
+        return this.client_id;
     }
 
     public void setClientId(int client_id) {

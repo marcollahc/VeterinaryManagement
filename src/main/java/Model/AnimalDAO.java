@@ -94,7 +94,7 @@ public class AnimalDAO extends DAO {
         return (animals.isEmpty() ? null : animals.get(0));
     }
 
-    public List retrieveAnimalsByID(int id) {
+    public List retrieveByClientID(int id) {
         return this.retrieve("SELECT * FROM animal WHERE client_id = " + id);
     }
 

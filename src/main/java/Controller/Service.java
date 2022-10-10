@@ -34,14 +34,27 @@ public class Service {
     private static Veterinary selectedVeterinary = null;
 
     // public Animal create(String name, String birthdate, int sex, int specie_id, int client_id) {}
-    public List retrieveAllAnimals() {
+    public static List<Animal> retrieveAllAnimals() {
         return AnimalDAO.getInstance().retrieveAll();
     }
+    
     // public List retrieveLast() {}
-    public Animal retrieveAnimalByID(int id) {
+    
+    public static Animal retrieveAnimalByID(int id) {
         return AnimalDAO.getInstance().retrieveByID(id);
     }
-    // public List retrieveAnimalsByID(int id) {}
+    
+    public static List<Animal> retrieveAnimalsByClientID(Object client) {
+        int client_id = 0;
+        
+        if (client != null) {
+            Client client_row = (Client) client;
+            client_id = client_row.getId();
+        }
+        
+        
+        return AnimalDAO.getInstance().retrieveByClientID(client_id);
+    }
     // public List retrieveBySimilarName(String name) {}
     // public void update(Animal animal) {}
     // public void delete(Animal animal) {}
@@ -52,7 +65,7 @@ public class Service {
         return ClientDAO.getInstance().retrieveAll();
     }
     // public List retrieveLast() {}
-    public Client retrieveClientByID(int id) {
+    public static Client retrieveClientByID(int id) {
         return ClientDAO.getInstance().retrieveByID(id);
     }
     // public List retrieveBySimilarName(String name) {}
@@ -61,11 +74,11 @@ public class Service {
     
     
     // public MedicalAppointment create(String date_appointment, String history, int treatment_id, int veterinary_id) {}
-    public List retrieveAllMedicalAppointments() {
+    public static List retrieveAllMedicalAppointments() {
         return MedicalAppointmentDAO.getInstance().retrieveAll();
     }
     // public List retrieveLast() {}
-    public MedicalAppointment retrieveMedicalAppointmentByID(int id) {
+    public static MedicalAppointment retrieveMedicalAppointmentByID(int id) {
         return MedicalAppointmentDAO.getInstance().retrieveByID(id);
     }
     // public List retrieveByTreatmentId(int id) {}
@@ -75,11 +88,11 @@ public class Service {
     
     
     // public MedicalExam create(String exam_description, int medical_appointment_id) {}
-    public List retrieveAllMedicalExams() {
+    public static List retrieveAllMedicalExams() {
         return MedicalExamDAO.getInstance().retrieveAll();
     }
     // public List retrieveLast() {}
-    public MedicalExam retrieveMedicalExamByID(int id) {
+    public static MedicalExam retrieveMedicalExamByID(int id) {
         return MedicalExamDAO.getInstance().retrieveByID(id);
     }
     // public List retrieveByMedicalAppointmentId(String id) {}
@@ -88,11 +101,11 @@ public class Service {
     
     
     // public Specie create(String name) {}
-    public List retrieveAllSpecies() {
+    public static List retrieveAllSpecies() {
         return SpecieDAO.getInstance().retrieveAll();
     }
     // public List retrieveLast() {}
-    public Specie retrieveSpecieByID(int id) {
+    public static Specie retrieveSpecieByID(int id) {
         return SpecieDAO.getInstance().retrieveByID(id);
     }
     // public List retrieveBySimilarName(String name) {}
@@ -101,11 +114,11 @@ public class Service {
     
     
     // public Treatment create(String start_date, String final_date, int animal_id) {}
-    public List retrieveAllTreatments() {
+    public static List retrieveAllTreatments() {
         return TreatmentDAO.getInstance().retrieveAll();
     }
     // public List retrieveLast() {}
-    public Treatment retrieveTreatmentByID(int id) {
+    public static Treatment retrieveTreatmentByID(int id) {
         return TreatmentDAO.getInstance().retrieveByID(id);
     }
     // public List retrieveByAnimalId(int id) {}
@@ -115,11 +128,11 @@ public class Service {
     
     
     // public Veterinary create(String name, String document, String phone, String email, String zip_code, int street_number, String street_complement, String crmv) {}
-    public List retrieveAllVeterinarians() {
+    public static List retrieveAllVeterinarians() {
         return VeterinaryDAO.getInstance().retrieveAll();
     }
     // public List retrieveLast() {}
-    public Veterinary retrieveVeterinaryByID(int id) {
+    public static Veterinary retrieveVeterinaryByID(int id) {
         return VeterinaryDAO.getInstance().retrieveByID(id);
     }
     // public List retrieveBySimilarName(String name) {}

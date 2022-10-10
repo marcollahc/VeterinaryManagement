@@ -52,7 +52,7 @@ public class AnimalTableModel extends GenericTableModel {
             case 2:
                 return animal.getBirthdate();
             case 3:
-                return animal.getSex();
+                return (animal.getSex() == 1) ? "Macho" : "Fêmea";
             case 4:
                 Specie specie = SpecieDAO.getInstance().retrieveByID(animal.getSpecieId());
                 return specie.getName();

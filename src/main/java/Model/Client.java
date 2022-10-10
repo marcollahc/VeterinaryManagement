@@ -22,11 +22,11 @@ public class Client {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -34,7 +34,7 @@ public class Client {
     }
 
     public String getDocument() {
-        return document;
+        return this.document;
     }
 
     public void setDocument(String document) {
@@ -42,7 +42,7 @@ public class Client {
     }
 
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
     public void setPhone(String phone) {
@@ -50,7 +50,7 @@ public class Client {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -58,7 +58,7 @@ public class Client {
     }
 
     public String getZipCode() {
-        return zip_code;
+        return this.zip_code;
     }
 
     public void setZipCode(String zip_code) {
@@ -66,7 +66,7 @@ public class Client {
     }
 
     public int getStreetNumber() {
-        return street_number;
+        return this.street_number;
     }
 
     public void setStreetNumber(int street_number) {
@@ -74,7 +74,7 @@ public class Client {
     }
 
     public String getStreetComplement() {
-        return street_complement;
+        return this.street_complement;
     }
 
     public void setStreetComplement(String street_complement) {

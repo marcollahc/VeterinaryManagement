@@ -16,11 +16,11 @@ public class MedicalAppointment {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getDateAppointment() {
-        return date_appointment;
+        return this.date_appointment;
     }
 
     public void setDateAppointment(String date_appointment) {
@@ -28,7 +28,7 @@ public class MedicalAppointment {
     }
 
     public String getHistory() {
-        return history;
+        return this.history;
     }
 
     public void setHistory(String history) {
@@ -36,7 +36,7 @@ public class MedicalAppointment {
     }
 
     public int getTreatmentId() {
-        return treatment_id;
+        return this.treatment_id;
     }
 
     public void setTreatmentId(int treatment_id) {
@@ -44,7 +44,7 @@ public class MedicalAppointment {
     }
 
     public int getVeterinaryId() {
-        return veterinary_id;
+        return this.veterinary_id;
     }
 
     public void setVeterinaryId(int veterinary_id) {

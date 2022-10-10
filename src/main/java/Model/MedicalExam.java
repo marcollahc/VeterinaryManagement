@@ -12,11 +12,11 @@ public class MedicalExam {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getExamDescription() {
-        return exam_description;
+        return this.exam_description;
     }
 
     public void setExamDescription(String exam_description) {
@@ -24,7 +24,7 @@ public class MedicalExam {
     }
 
     public int getMedicalAppointmentId() {
-        return medical_appointment_id;
+        return this.medical_appointment_id;
     }
 
     public void setMedicalAppointmentId(int medical_appointment_id) {

@@ -14,11 +14,11 @@ public class Treatment {
     }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public String getStartDate() {
-        return start_date;
+        return this.start_date;
     }
 
     public void setStartDate(String start_date) {
@@ -26,7 +26,7 @@ public class Treatment {
     }
 
     public String getFinalDate() {
-        return final_date;
+        return this.final_date;
     }
 
     public void setFinalDate(String final_date) {
@@ -34,7 +34,7 @@ public class Treatment {
     }
 
     public int getAnimalId() {
-        return animal_id;
+        return this.animal_id;
     }
 
     public void setAnimalId(int animal_id) {

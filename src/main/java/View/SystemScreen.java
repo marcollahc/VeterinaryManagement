@@ -67,20 +67,16 @@ public class SystemScreen extends javax.swing.JPanel {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         client_document4 = new javax.swing.JTextField();
         client_name3 = new javax.swing.JTextField();
-        client_phone3 = new javax.swing.JTextField();
-        client_email3 = new javax.swing.JTextField();
-        client_street_number3 = new javax.swing.JTextField();
-        client_zip_code3 = new javax.swing.JTextField();
-        client_street_complement3 = new javax.swing.JTextField();
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel35 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
@@ -140,7 +136,6 @@ public class SystemScreen extends javax.swing.JPanel {
         client_document5 = new javax.swing.JTextField();
         client_name4 = new javax.swing.JTextField();
         client_phone4 = new javax.swing.JTextField();
-        client_email4 = new javax.swing.JTextField();
         client_street_number4 = new javax.swing.JTextField();
         client_zip_code4 = new javax.swing.JTextField();
         client_street_complement4 = new javax.swing.JTextField();
@@ -489,19 +484,15 @@ public class SystemScreen extends javax.swing.JPanel {
 
             jPanel12.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Gerenciamento de animal", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
 
-            jLabel28.setText("Telefone");
+            jLabel28.setText("Tutor");
 
             jLabel29.setText("Nome");
 
-            jLabel30.setText("CPF");
+            jLabel30.setText("Data de nascimento");
 
-            jLabel31.setText("E-mail");
+            jLabel32.setText("Sexo");
 
-            jLabel32.setText("CEP");
-
-            jLabel33.setText("Número");
-
-            jLabel34.setText("Complemento");
+            jLabel34.setText("Espécie");
 
             client_document4.setText("jTextField1");
             client_document4.setName("client_document"); // NOI18N
@@ -514,36 +505,6 @@ public class SystemScreen extends javax.swing.JPanel {
             client_name3.setText("jTextField1");
             client_name3.setToolTipText("");
             client_name3.setName("client_name"); // NOI18N
-
-            client_phone3.setText("jTextField1");
-            client_phone3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    client_phone3ActionPerformed(evt);
-                }
-            });
-
-            client_email3.setText("jTextField1");
-
-            client_street_number3.setText("jTextField1");
-            client_street_number3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    client_street_number3ActionPerformed(evt);
-                }
-            });
-
-            client_zip_code3.setText("jTextField1");
-            client_zip_code3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    client_zip_code3ActionPerformed(evt);
-                }
-            });
-
-            client_street_complement3.setText("jTextField1");
-            client_street_complement3.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    client_street_complement3ActionPerformed(evt);
-                }
-            });
 
             jButton13.setBackground(new java.awt.Color(0, 153, 51));
             jButton13.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -565,49 +526,49 @@ public class SystemScreen extends javax.swing.JPanel {
             jButton15.setForeground(new java.awt.Color(255, 255, 255));
             jButton15.setText("Remover");
 
+            jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+            jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+            jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
             javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
             jPanel12.setLayout(jPanel12Layout);
             jPanel12Layout.setHorizontalGroup(
                 jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                    .addGap(8, 8, 8)
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel12Layout.createSequentialGroup()
-                            .addComponent(jButton15)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton14)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton13))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
-                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(client_phone3, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
-                                .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(client_email3, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addContainerGap()
+                            .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel12Layout.createSequentialGroup()
-                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(client_name3)
-                                .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(client_document4, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                                .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addContainerGap()
+                            .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
-                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(client_zip_code3, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
-                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGap(8, 8, 8)
+                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel12Layout.createSequentialGroup()
-                                    .addGap(8, 8, 8)
-                                    .addComponent(client_street_number3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                                    .addComponent(jButton15)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jButton14)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jButton13))
+                                .addGroup(jPanel12Layout.createSequentialGroup()
+                                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(client_name3))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(client_document4, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
+                                        .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(client_street_complement3, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                                .addComponent(jComboBox2, 0, 270, Short.MAX_VALUE)
                                 .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                     .addGap(8, 8, 8))
             );
@@ -623,23 +584,17 @@ public class SystemScreen extends javax.swing.JPanel {
                         .addComponent(client_document4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(client_name3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel31)
-                        .addComponent(jLabel28))
+                    .addComponent(jLabel28)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(client_phone3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(client_email3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel32)
-                        .addComponent(jLabel33)
                         .addComponent(jLabel34))
                     .addGap(5, 5, 5)
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(client_zip_code3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(client_street_number3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(client_street_complement3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton13)
@@ -1101,8 +1056,6 @@ public class SystemScreen extends javax.swing.JPanel {
                 }
             });
 
-            client_email4.setText("jTextField1");
-
             client_street_number4.setText("jTextField1");
             client_street_number4.addActionListener(new java.awt.event.ActionListener() {
                 public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1162,9 +1115,7 @@ public class SystemScreen extends javax.swing.JPanel {
                                 .addComponent(client_phone4, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                                 .addComponent(jLabel36, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(client_email4, javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel39, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel39, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(jPanel13Layout.createSequentialGroup()
                             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(client_name4)
@@ -1206,9 +1157,7 @@ public class SystemScreen extends javax.swing.JPanel {
                         .addComponent(jLabel39)
                         .addComponent(jLabel36))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(client_phone4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(client_email4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(client_phone4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel40)
@@ -1554,22 +1503,6 @@ public class SystemScreen extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_client_document4ActionPerformed
 
-    private void client_phone3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_phone3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_phone3ActionPerformed
-
-    private void client_street_number3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_street_number3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_street_number3ActionPerformed
-
-    private void client_zip_code3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_zip_code3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_zip_code3ActionPerformed
-
-    private void client_street_complement3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_street_complement3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_street_complement3ActionPerformed
-
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton13ActionPerformed
@@ -1589,10 +1522,6 @@ public class SystemScreen extends javax.swing.JPanel {
     private void client_zip_code4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_zip_code4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_client_zip_code4ActionPerformed
-
-    private void client_street_complement4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_street_complement4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_street_complement4ActionPerformed
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
@@ -1656,6 +1585,10 @@ public class SystemScreen extends javax.swing.JPanel {
         ));
     }//GEN-LAST:event_jTable1MousePressed
 
+    private void client_street_complement4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_street_complement4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_client_street_complement4ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField client_document;
@@ -1667,8 +1600,6 @@ public class SystemScreen extends javax.swing.JPanel {
     private javax.swing.JTextField client_document7;
     private javax.swing.JTextField client_email;
     private javax.swing.JTextField client_email1;
-    private javax.swing.JTextField client_email3;
-    private javax.swing.JTextField client_email4;
     private javax.swing.JTextField client_email5;
     private javax.swing.JTextField client_email6;
     private javax.swing.JTextField client_name;
@@ -1679,25 +1610,21 @@ public class SystemScreen extends javax.swing.JPanel {
     private javax.swing.JTextField client_name6;
     private javax.swing.JTextField client_phone;
     private javax.swing.JTextField client_phone1;
-    private javax.swing.JTextField client_phone3;
     private javax.swing.JTextField client_phone4;
     private javax.swing.JTextField client_phone5;
     private javax.swing.JTextField client_phone6;
     private javax.swing.JTextField client_street_complement;
     private javax.swing.JTextField client_street_complement1;
-    private javax.swing.JTextField client_street_complement3;
     private javax.swing.JTextField client_street_complement4;
     private javax.swing.JTextField client_street_complement5;
     private javax.swing.JTextField client_street_complement6;
     private javax.swing.JTextField client_street_number;
     private javax.swing.JTextField client_street_number1;
-    private javax.swing.JTextField client_street_number3;
     private javax.swing.JTextField client_street_number4;
     private javax.swing.JTextField client_street_number5;
     private javax.swing.JTextField client_street_number6;
     private javax.swing.JTextField client_zip_code;
     private javax.swing.JTextField client_zip_code1;
-    private javax.swing.JTextField client_zip_code3;
     private javax.swing.JTextField client_zip_code4;
     private javax.swing.JTextField client_zip_code5;
     private javax.swing.JTextField client_zip_code6;
@@ -1722,6 +1649,9 @@ public class SystemScreen extends javax.swing.JPanel {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -1739,9 +1669,7 @@ public class SystemScreen extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;

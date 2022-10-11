@@ -21,7 +21,7 @@ public class VeterinaryManagement {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 // new SystemScreen().setVisible(true);
-                JFrame frame = new JFrame("Testing");
+                JFrame frame = new JFrame("Sysvet");
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.add(new SystemScreen());
                 frame.pack();
@@ -42,11 +42,18 @@ public class VeterinaryManagement {
 
         for (Client client : clients) {
             System.out.println("id=" + client.getId() + ", name=" + client.getName());
-        } 
+        }
         
         id=1, name=Teste Um
         id=2, name=Teste Dois
         id=3, name=Teste Três
+        
+        Client client_update = ClientDAO.getInstance().retrieveById(1);
+        client_update.setName("Teste Alteração");
+        ClientDAO.getInstance().update(client_update);
+        
+        Client client_delete = ClientDAO.getInstance().retrieveById(1);
+        ClientDAO.getInstance().delete(client_delete);
         
         --------------------------
 

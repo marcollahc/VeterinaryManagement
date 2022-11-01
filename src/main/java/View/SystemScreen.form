@@ -102,8 +102,6 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -146,7 +144,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="client_street_complement" alignment="0" pref="225" max="32767" attributes="0"/>
-                                      <Component id="jLabel8" max="32767" attributes="0"/>
+                                      <Component id="jLabel8" pref="255" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -192,7 +190,6 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -238,7 +235,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_document">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="name" type="java.lang.String" value="client_document" noResource="true"/>
                   </Properties>
                   <Events>
@@ -247,44 +243,28 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_name">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="name" type="java.lang.String" value="client_name" noResource="true"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_phone">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_phoneActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_email">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_street_number">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_street_numberActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_zip_code">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_zip_codeActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_street_complement">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_street_complementActionPerformed"/>
                   </Events>
@@ -305,20 +285,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="jButton2">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton3">
                   <Properties>
@@ -405,7 +371,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel10" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jScrollPane3" alignment="0" pref="570" max="32767" attributes="0"/>
+                          <Component id="jScrollPane3" alignment="0" pref="600" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel9" min="-2" pref="179" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -449,9 +415,7 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jButton9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="302" max="32767" attributes="0"/>
-                                  <Component id="jButton8" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButton7" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                               </Group>
@@ -476,7 +440,6 @@
                           <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton8" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton9" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -492,7 +455,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="specie_name">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="name" type="java.lang.String" value="name" noResource="true"/>
                   </Properties>
@@ -514,22 +476,9 @@
                     <Property name="text" type="java.lang.String" value="Cadastrar"/>
                   </Properties>
                   <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton7MousePressed"/>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton7ActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="jButton8">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton9">
                   <Properties>
@@ -574,6 +523,9 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable3MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -639,7 +591,7 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jComboBox3" max="32767" attributes="0"/>
+                                  <Component id="animal_client_id" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -647,18 +599,16 @@
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jButton15" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jButton14" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jButton13" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel29" max="32767" attributes="0"/>
-                                              <Component id="client_name3" max="32767" attributes="0"/>
+                                              <Component id="animal_name" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="client_document4" alignment="0" pref="269" max="32767" attributes="0"/>
+                                              <Component id="animal_birthdate" alignment="0" pref="269" max="32767" attributes="0"/>
                                               <Component id="jLabel30" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
@@ -668,11 +618,11 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jLabel32" min="-2" pref="268" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" min="-2" pref="270" max="-2" attributes="0"/>
+                                      <Component id="animal_sex" min="-2" pref="270" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jComboBox2" pref="270" max="32767" attributes="0"/>
+                                      <Component id="animal_specie_id" pref="300" max="32767" attributes="0"/>
                                       <Component id="jLabel34" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -691,13 +641,13 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="client_document4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="client_name3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="animal_birthdate" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="animal_name" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jComboBox3" min="-2" max="-2" attributes="0"/>
+                          <Component id="animal_client_id" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -705,13 +655,12 @@
                           </Group>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="animal_sex" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="animal_specie_id" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton14" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton15" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -745,18 +694,16 @@
                     <Property name="text" type="java.lang.String" value="Esp&#xe9;cie"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_document4">
+                <Component class="javax.swing.JTextField" name="animal_birthdate">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="name" type="java.lang.String" value="client_document" noResource="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_document4ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="animal_birthdateActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_name3">
+                <Component class="javax.swing.JTextField" name="animal_name">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="name" type="java.lang.String" value="client_name" noResource="true"/>
                   </Properties>
@@ -778,20 +725,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton13ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton14">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JButton" name="jButton15">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -806,7 +739,7 @@
                     <Property name="text" type="java.lang.String" value="Remover"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox1">
+                <Component class="javax.swing.JComboBox" name="animal_sex">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -821,7 +754,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox2">
+                <Component class="javax.swing.JComboBox" name="animal_specie_id">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -836,7 +769,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox3">
+                <Component class="javax.swing.JComboBox" name="animal_client_id">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -874,6 +807,9 @@
                       <Connection code="new AnimalTableModel(Controller.Service.retrieveAllAnimals())" type="code"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable4MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -940,8 +876,6 @@
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jButton24" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jButton23" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="jButton22" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
@@ -995,7 +929,6 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton22" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton23" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton24" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -1026,7 +959,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_name6">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="name" type="java.lang.String" value="client_name" noResource="true"/>
                   </Properties>
@@ -1047,20 +979,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton22ActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="jButton23">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton24">
                   <Properties>
@@ -1208,14 +1126,12 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jButton21" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jButton20" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton19" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="client_name5" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel45" alignment="0" pref="269" max="32767" attributes="0"/>
+                                      <Component id="jLabel45" alignment="0" pref="299" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="275" max="-2" attributes="0"/>
                               </Group>
@@ -1239,7 +1155,6 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton19" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton20" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton21" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -1260,7 +1175,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_name5">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="name" type="java.lang.String" value="client_name" noResource="true"/>
                   </Properties>
@@ -1281,20 +1195,6 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton19ActionPerformed"/>
                   </Events>
-                </Component>
-                <Component class="javax.swing.JButton" name="jButton20">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton21">
                   <Properties>
@@ -1369,7 +1269,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel13" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jScrollPane6" alignment="0" pref="570" max="32767" attributes="0"/>
+                          <Component id="jScrollPane6" alignment="0" pref="600" max="32767" attributes="0"/>
                           <Component id="jLabel43" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1416,9 +1316,7 @@
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">
                                           <Component id="jButton18" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace pref="302" max="32767" attributes="0"/>
-                                          <Component id="jButton17" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Component id="jButton16" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
@@ -1466,7 +1364,6 @@
                           <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton16" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton17" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton18" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -1507,20 +1404,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton16ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton17">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JButton" name="jButton18">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1551,14 +1434,8 @@
                   </AuxValues>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jFormattedTextField1"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jFormattedTextField2"/>
-                  </Properties>
                 </Component>
               </SubComponents>
             </Container>
@@ -1646,8 +1523,6 @@
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="jButton4" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -1695,7 +1570,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="client_street_complement1" alignment="0" pref="225" max="32767" attributes="0"/>
-                                      <Component id="jLabel20" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel20" alignment="0" pref="255" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1750,7 +1625,6 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton6" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
@@ -1796,7 +1670,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_document1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="name" type="java.lang.String" value="client_document" noResource="true"/>
                   </Properties>
                   <Events>
@@ -1805,43 +1678,30 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_name1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="name" type="java.lang.String" value="client_name" noResource="true"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_phone1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_phone1ActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_email1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_street_number1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_street_number1ActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_zip_code1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
-                  </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_zip_code1ActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_street_complement1">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
+                    <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_street_complement1ActionPerformed"/>
@@ -1864,20 +1724,6 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButton5">
-                  <Properties>
-                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="99" green="0" red="0" type="rgb"/>
-                    </Property>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="1"/>
-                    </Property>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Salvar"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JButton" name="jButton6">
                   <Properties>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -1899,7 +1745,6 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="client_document2">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="jTextField1"/>
                     <Property name="name" type="java.lang.String" value="client_document" noResource="true"/>
                   </Properties>
                   <Events>

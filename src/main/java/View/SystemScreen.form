@@ -54,7 +54,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel8" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" alignment="0" pref="570" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" pref="600" max="32767" attributes="0"/>
                           <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel1" max="32767" attributes="0"/>
                           <Component id="jLabel10" alignment="0" max="32767" attributes="0"/>
@@ -143,7 +143,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="client_street_complement" alignment="0" pref="225" max="32767" attributes="0"/>
+                                      <Component id="client_street_complement" alignment="0" pref="255" max="32767" attributes="0"/>
                                       <Component id="jLabel8" pref="255" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -547,7 +547,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel12" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jScrollPane4" alignment="0" pref="570" max="32767" attributes="0"/>
+                          <Component id="jScrollPane4" alignment="0" pref="600" max="32767" attributes="0"/>
                           <Component id="jLabel35" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -880,7 +880,7 @@
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="client_name6" alignment="0" pref="299" max="32767" attributes="0"/>
+                                              <Component id="date_appointment" alignment="0" pref="299" max="32767" attributes="0"/>
                                               <Component id="jLabel53" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="275" max="-2" attributes="0"/>
@@ -892,12 +892,12 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
                                       <Component id="jLabel56" min="-2" pref="279" max="-2" attributes="0"/>
-                                      <Component id="jComboBox5" min="-2" pref="281" max="-2" attributes="0"/>
+                                      <Component id="treatment_id" min="-2" pref="281" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel58" max="32767" attributes="0"/>
-                                      <Component id="jComboBox6" max="32767" attributes="0"/>
+                                      <Component id="veterinary_id" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -911,7 +911,7 @@
                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                           <Component id="jLabel53" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="client_name6" min="-2" max="-2" attributes="0"/>
+                          <Component id="date_appointment" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel52" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
@@ -923,8 +923,8 @@
                           </Group>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jComboBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jComboBox6" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="treatment_id" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="veterinary_id" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -939,7 +939,7 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel52">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Telefone"/>
+                    <Property name="text" type="java.lang.String" value="Descri&#xe7;&#xe3;o do exame"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel53">
@@ -957,7 +957,7 @@
                     <Property name="text" type="java.lang.String" value="Complemento"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_name6">
+                <Component class="javax.swing.JTextField" name="date_appointment">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="name" type="java.lang.String" value="client_name" noResource="true"/>
@@ -1001,7 +1001,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea2">
+                    <Component class="javax.swing.JTextArea" name="history">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -1009,7 +1009,7 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JComboBox" name="jComboBox5">
+                <Component class="javax.swing.JComboBox" name="treatment_id">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -1024,7 +1024,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox6">
+                <Component class="javax.swing.JComboBox" name="veterinary_id">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -1062,6 +1062,9 @@
                       <Connection code="new MedicalAppointmentTableModel(Controller.Service.retrieveAllMedicalAppointments())" type="code"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable8MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1083,7 +1086,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel14" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jScrollPane7" alignment="0" pref="570" max="32767" attributes="0"/>
+                          <Component id="jScrollPane7" alignment="0" pref="600" max="32767" attributes="0"/>
                           <Component id="jLabel51" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1095,11 +1098,11 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jPanel14" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="jLabel51" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane7" min="-2" pref="240" max="-2" attributes="0"/>
-                      <EmptySpace pref="365" max="32767" attributes="0"/>
+                      <EmptySpace pref="326" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1119,45 +1122,43 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane9" max="32767" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel45" alignment="0" pref="578" max="32767" attributes="0"/>
+                              <Component id="medical_appointment_id" max="32767" attributes="0"/>
+                              <Component id="jScrollPane9" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel44" min="-2" pref="505" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
                                   <Component id="jButton21" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="jButton19" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="client_name5" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jLabel45" alignment="0" pref="299" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="275" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jLabel44" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                          <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="client_name5" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel44" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jScrollPane9" min="-2" pref="107" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jLabel45" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="medical_appointment_id" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jButton19" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="jButton21" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton19" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace pref="24" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1171,12 +1172,6 @@
                 <Component class="javax.swing.JLabel" name="jLabel45">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Identificador da consulta"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="client_name5">
-                  <Properties>
-                    <Property name="toolTipText" type="java.lang.String" value=""/>
-                    <Property name="name" type="java.lang.String" value="client_name" noResource="true"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton19">
@@ -1217,7 +1212,7 @@
 
                   <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                   <SubComponents>
-                    <Component class="javax.swing.JTextArea" name="jTextArea1">
+                    <Component class="javax.swing.JTextArea" name="exam_description">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
                         <Property name="rows" type="int" value="5"/>
@@ -1225,6 +1220,21 @@
                     </Component>
                   </SubComponents>
                 </Container>
+                <Component class="javax.swing.JComboBox" name="medical_appointment_id">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="Item 1"/>
+                        <StringItem index="1" value="Item 2"/>
+                        <StringItem index="2" value="Item 3"/>
+                        <StringItem index="3" value="Item 4"/>
+                      </StringArray>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
               </SubComponents>
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel51">
@@ -1248,6 +1258,9 @@
                       <Connection code="new MedicalExamTableModel(Controller.Service.retrieveAllMedicalExams())" type="code"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable7MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1309,7 +1322,7 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jComboBox4" max="32767" attributes="0"/>
+                                  <Component id="animal_id" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
@@ -1330,13 +1343,13 @@
                                       </Group>
                                       <Group type="102" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jFormattedTextField1" max="32767" attributes="0"/>
+                                          <Component id="start_date" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jLabel38" pref="269" max="32767" attributes="0"/>
-                                      <Component id="jFormattedTextField2" max="32767" attributes="0"/>
+                                      <Component id="final_date" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -1354,13 +1367,13 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jFormattedTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jFormattedTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="start_date" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="final_date" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jComboBox4" min="-2" max="-2" attributes="0"/>
+                          <Component id="animal_id" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jButton16" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1418,7 +1431,7 @@
                     <Property name="text" type="java.lang.String" value="Remover"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="jComboBox4">
+                <Component class="javax.swing.JComboBox" name="animal_id">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -1433,9 +1446,9 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField1">
+                <Component class="javax.swing.JFormattedTextField" name="start_date">
                 </Component>
-                <Component class="javax.swing.JFormattedTextField" name="jFormattedTextField2">
+                <Component class="javax.swing.JFormattedTextField" name="final_date">
                 </Component>
               </SubComponents>
             </Container>
@@ -1460,6 +1473,9 @@
                       <Connection code="new TreatmentTableModel(Controller.Service.retrieveAllTreatments())" type="code"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable6MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -1481,7 +1497,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jPanel9" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jScrollPane5" alignment="0" pref="570" max="32767" attributes="0"/>
+                          <Component id="jScrollPane5" alignment="0" pref="600" max="32767" attributes="0"/>
                           <Component id="jLabel21" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -1527,40 +1543,40 @@
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="client_phone1" alignment="0" pref="279" max="32767" attributes="0"/>
+                                      <Component id="veterinary_phone" alignment="0" pref="279" max="32767" attributes="0"/>
                                       <Component id="jLabel12" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="client_email1" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="veterinary_email" alignment="1" max="32767" attributes="0"/>
                                       <Component id="jLabel15" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="client_name1" pref="257" max="32767" attributes="0"/>
+                                      <Component id="veterinary_name" pref="257" max="32767" attributes="0"/>
                                       <Component id="jLabel13" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="client_document1" max="32767" attributes="0"/>
+                                      <Component id="veterinary_document" max="32767" attributes="0"/>
                                       <Component id="jLabel14" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="client_document2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="veterinary_crmv" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jLabel19" alignment="0" min="-2" pref="117" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="jLabel16" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="client_zip_code1" alignment="1" pref="154" max="32767" attributes="0"/>
+                                      <Component id="veterinary_zip_code" alignment="1" pref="154" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
-                                          <Component id="client_street_number1" min="-2" pref="151" max="-2" attributes="0"/>
+                                          <Component id="veterinary_street_number" min="-2" pref="151" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace max="-2" attributes="0"/>
@@ -1569,7 +1585,7 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="client_street_complement1" alignment="0" pref="225" max="32767" attributes="0"/>
+                                      <Component id="veterinary_street_complement" alignment="0" pref="255" max="32767" attributes="0"/>
                                       <Component id="jLabel20" alignment="0" pref="255" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
@@ -1590,14 +1606,14 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="client_document1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="client_name1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="veterinary_document" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="veterinary_name" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="client_document2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="veterinary_crmv" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -1607,8 +1623,8 @@
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="client_phone1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="client_email1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="veterinary_phone" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="veterinary_email" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1618,9 +1634,9 @@
                           </Group>
                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="client_zip_code1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="client_street_number1" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="client_street_complement1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="veterinary_zip_code" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="veterinary_street_number" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="veterinary_street_complement" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -1668,43 +1684,43 @@
                     <Property name="text" type="java.lang.String" value="Complemento"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_document1">
+                <Component class="javax.swing.JTextField" name="veterinary_document">
                   <Properties>
                     <Property name="name" type="java.lang.String" value="client_document" noResource="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_document1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="veterinary_documentActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_name1">
+                <Component class="javax.swing.JTextField" name="veterinary_name">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                     <Property name="name" type="java.lang.String" value="client_name" noResource="true"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_phone1">
+                <Component class="javax.swing.JTextField" name="veterinary_phone">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_phone1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="veterinary_phoneActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_email1">
+                <Component class="javax.swing.JTextField" name="veterinary_email">
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_street_number1">
+                <Component class="javax.swing.JTextField" name="veterinary_street_number">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_street_number1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="veterinary_street_numberActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_zip_code1">
+                <Component class="javax.swing.JTextField" name="veterinary_zip_code">
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_zip_code1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="veterinary_zip_codeActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_street_complement1">
+                <Component class="javax.swing.JTextField" name="veterinary_street_complement">
                   <Properties>
                     <Property name="toolTipText" type="java.lang.String" value=""/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_street_complement1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="veterinary_street_complementActionPerformed"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton4">
@@ -1743,12 +1759,12 @@
                     <Property name="text" type="java.lang.String" value="CRMV"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="client_document2">
+                <Component class="javax.swing.JTextField" name="veterinary_crmv">
                   <Properties>
                     <Property name="name" type="java.lang.String" value="client_document" noResource="true"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_document2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="veterinary_crmvActionPerformed"/>
                   </Events>
                 </Component>
               </SubComponents>
@@ -1774,6 +1790,9 @@
                       <Connection code="new VeterinaryTableModel(Controller.Service.retrieveAllVeterinarians())" type="code"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable5MousePressed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>

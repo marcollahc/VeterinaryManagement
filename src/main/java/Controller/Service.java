@@ -56,6 +56,38 @@ public class Service {
     public static void setSpecie(Object specie) {
         Service.selectedSpecie = (Specie) specie;
     }
+    
+    public static MedicalAppointment getMedicalAppointment() {
+        return Service.selectedMedicalAppointment;
+    }
+    
+    public static void setMedicalAppointment(Object medical_appointment) {
+        Service.selectedMedicalAppointment = (MedicalAppointment) medical_appointment;
+    }
+    
+    public static MedicalExam getMedicalExam() {
+        return Service.selectedMedicalExam;
+    }
+    
+    public static void setMedicalExam(Object medical_exam) {
+        Service.selectedMedicalExam = (MedicalExam) medical_exam;
+    }
+    
+    public static Treatment getTreatment() {
+        return Service.selectedTreatment;
+    }
+    
+    public static void setTreatment(Object treatment) {
+        Service.selectedTreatment = (Treatment) treatment;
+    }
+    
+    public static Veterinary getVeterinary() {
+        return Service.selectedVeterinary;
+    }
+    
+    public static void setVeterinary(Object veterinary) {
+        Service.selectedVeterinary = (Veterinary) veterinary;
+    }
 
     // public Animal createAnimal(String name, String birthdate, int sex, int specie_id, int client_id) {}
     public static List<Animal> retrieveAllAnimals() {

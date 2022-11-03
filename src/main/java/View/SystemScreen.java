@@ -7,7 +7,11 @@ package View;
 import Controller.Service;
 import Model.Animal;
 import Model.Client;
+import Model.MedicalAppointment;
+import Model.MedicalExam;
 import Model.Specie;
+import Model.Treatment;
+import Model.Veterinary;
 
 /**
  *
@@ -88,13 +92,13 @@ public class SystemScreen extends javax.swing.JPanel {
         jLabel53 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
-        client_name6 = new javax.swing.JTextField();
+        date_appointment = new javax.swing.JTextField();
         jButton22 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
         jScrollPane10 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        history = new javax.swing.JTextArea();
+        treatment_id = new javax.swing.JComboBox<>();
+        veterinary_id = new javax.swing.JComboBox<>();
         jLabel59 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable8 = new javax.swing.JTable();
@@ -102,11 +106,11 @@ public class SystemScreen extends javax.swing.JPanel {
         jPanel14 = new javax.swing.JPanel();
         jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
-        client_name5 = new javax.swing.JTextField();
         jButton19 = new javax.swing.JButton();
         jButton21 = new javax.swing.JButton();
         jScrollPane9 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        exam_description = new javax.swing.JTextArea();
+        medical_appointment_id = new javax.swing.JComboBox<>();
         jLabel51 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable7 = new javax.swing.JTable();
@@ -117,9 +121,9 @@ public class SystemScreen extends javax.swing.JPanel {
         jLabel38 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        animal_id = new javax.swing.JComboBox<>();
+        start_date = new javax.swing.JFormattedTextField();
+        final_date = new javax.swing.JFormattedTextField();
         jLabel43 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable6 = new javax.swing.JTable();
@@ -132,17 +136,17 @@ public class SystemScreen extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        client_document1 = new javax.swing.JTextField();
-        client_name1 = new javax.swing.JTextField();
-        client_phone1 = new javax.swing.JTextField();
-        client_email1 = new javax.swing.JTextField();
-        client_street_number1 = new javax.swing.JTextField();
-        client_zip_code1 = new javax.swing.JTextField();
-        client_street_complement1 = new javax.swing.JTextField();
+        veterinary_document = new javax.swing.JTextField();
+        veterinary_name = new javax.swing.JTextField();
+        veterinary_phone = new javax.swing.JTextField();
+        veterinary_email = new javax.swing.JTextField();
+        veterinary_street_number = new javax.swing.JTextField();
+        veterinary_zip_code = new javax.swing.JTextField();
+        veterinary_street_complement = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         jLabel19 = new javax.swing.JLabel();
-        client_document2 = new javax.swing.JTextField();
+        veterinary_crmv = new javax.swing.JTextField();
         jLabel21 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
@@ -252,7 +256,7 @@ public class SystemScreen extends javax.swing.JPanel {
                                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(client_street_complement, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                            .addComponent(client_street_complement, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                             .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))))
                 .addGap(8, 8, 8))
         );
@@ -317,7 +321,7 @@ public class SystemScreen extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                     .addComponent(jScrollPane2)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -574,7 +578,7 @@ public class SystemScreen extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                     .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -594,7 +598,7 @@ public class SystemScreen extends javax.swing.JPanel {
 
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Gerenciamento de consulta", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 18))); // NOI18N
 
-        jLabel52.setText("Telefone");
+        jLabel52.setText("Descrição do exame");
 
         jLabel53.setText("Data da consulta");
 
@@ -602,8 +606,8 @@ public class SystemScreen extends javax.swing.JPanel {
 
         jLabel58.setText("Complemento");
 
-        client_name6.setToolTipText("");
-        client_name6.setName("client_name"); // NOI18N
+        date_appointment.setToolTipText("");
+        date_appointment.setName("client_name"); // NOI18N
 
         jButton22.setBackground(new java.awt.Color(0, 153, 51));
         jButton22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -620,13 +624,13 @@ public class SystemScreen extends javax.swing.JPanel {
         jButton24.setForeground(new java.awt.Color(255, 255, 255));
         jButton24.setText("Remover");
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane10.setViewportView(jTextArea2);
+        history.setColumns(20);
+        history.setRows(5);
+        jScrollPane10.setViewportView(history);
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        treatment_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        veterinary_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -644,7 +648,7 @@ public class SystemScreen extends javax.swing.JPanel {
                                 .addComponent(jButton22))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
                                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(client_name6, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                                    .addComponent(date_appointment, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
                                     .addComponent(jLabel53, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(275, 275, 275))
                             .addComponent(jLabel52, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
@@ -652,11 +656,11 @@ public class SystemScreen extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(treatment_id, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(6, 6, 6)
                         .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jComboBox6, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(veterinary_id, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(8, 8, 8))
         );
         jPanel15Layout.setVerticalGroup(
@@ -665,7 +669,7 @@ public class SystemScreen extends javax.swing.JPanel {
                 .addGap(8, 8, 8)
                 .addComponent(jLabel53)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(client_name6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(date_appointment, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel52)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -676,8 +680,8 @@ public class SystemScreen extends javax.swing.JPanel {
                     .addComponent(jLabel58))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(treatment_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(veterinary_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton22)
@@ -689,6 +693,11 @@ public class SystemScreen extends javax.swing.JPanel {
         jLabel59.setText("Lista de consultas");
 
         jTable8.setModel(new MedicalAppointmentTableModel(Controller.Service.retrieveAllMedicalAppointments()));
+        jTable8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable8MousePressed(evt);
+            }
+        });
         jScrollPane8.setViewportView(jTable8);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -723,9 +732,6 @@ public class SystemScreen extends javax.swing.JPanel {
 
         jLabel45.setText("Identificador da consulta");
 
-        client_name5.setToolTipText("");
-        client_name5.setName("client_name"); // NOI18N
-
         jButton19.setBackground(new java.awt.Color(0, 153, 51));
         jButton19.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton19.setForeground(new java.awt.Color(255, 255, 255));
@@ -741,52 +747,58 @@ public class SystemScreen extends javax.swing.JPanel {
         jButton21.setForeground(new java.awt.Color(255, 255, 255));
         jButton21.setText("Remover");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane9.setViewportView(jTextArea1);
+        exam_description.setColumns(20);
+        exam_description.setRows(5);
+        jScrollPane9.setViewportView(exam_description);
+
+        medical_appointment_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(8, 8, 8)
+                .addContainerGap()
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 578, Short.MAX_VALUE)
+                    .addComponent(medical_appointment_id, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane9)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
                         .addComponent(jButton21)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton19))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(client_name5)
-                            .addComponent(jLabel45, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE))
-                        .addGap(275, 275, 275))
-                    .addComponent(jLabel44, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(8, 8, 8))
+                        .addComponent(jButton19)))
+                .addContainerGap())
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel14Layout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(jLabel45)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(client_name5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addContainerGap()
                 .addComponent(jLabel44)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(medical_appointment_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton19)
-                    .addComponent(jButton21))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton21)
+                    .addComponent(jButton19))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         jLabel51.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel51.setText("Lista de exames");
 
         jTable7.setModel(new MedicalExamTableModel(Controller.Service.retrieveAllMedicalExams()));
+        jTable7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable7MousePressed(evt);
+            }
+        });
         jScrollPane7.setViewportView(jTable7);
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -797,7 +809,7 @@ public class SystemScreen extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                     .addComponent(jLabel51, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -806,11 +818,11 @@ public class SystemScreen extends javax.swing.JPanel {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel51)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(365, Short.MAX_VALUE))
+                .addContainerGap(326, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Exames", jPanel5);
@@ -838,7 +850,7 @@ public class SystemScreen extends javax.swing.JPanel {
         jButton18.setForeground(new java.awt.Color(255, 255, 255));
         jButton18.setText("Remover");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        animal_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -848,7 +860,7 @@ public class SystemScreen extends javax.swing.JPanel {
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel13Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jComboBox4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(animal_id, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel13Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -864,11 +876,11 @@ public class SystemScreen extends javax.swing.JPanel {
                                 .addComponent(jLabel37, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(jPanel13Layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jFormattedTextField1)))
+                                .addComponent(start_date)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel38, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                            .addComponent(jFormattedTextField2))))
+                            .addComponent(final_date))))
                 .addGap(8, 8, 8))
         );
         jPanel13Layout.setVerticalGroup(
@@ -880,12 +892,12 @@ public class SystemScreen extends javax.swing.JPanel {
                     .addComponent(jLabel37))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(start_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(final_date, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel36)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(animal_id, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton16)
@@ -897,6 +909,11 @@ public class SystemScreen extends javax.swing.JPanel {
         jLabel43.setText("Lista de tratamentos");
 
         jTable6.setModel(new TreatmentTableModel(Controller.Service.retrieveAllTreatments()));
+        jTable6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable6MousePressed(evt);
+            }
+        });
         jScrollPane6.setViewportView(jTable6);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -941,38 +958,38 @@ public class SystemScreen extends javax.swing.JPanel {
 
         jLabel20.setText("Complemento");
 
-        client_document1.setName("client_document"); // NOI18N
-        client_document1.addActionListener(new java.awt.event.ActionListener() {
+        veterinary_document.setName("client_document"); // NOI18N
+        veterinary_document.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_document1ActionPerformed(evt);
+                veterinary_documentActionPerformed(evt);
             }
         });
 
-        client_name1.setToolTipText("");
-        client_name1.setName("client_name"); // NOI18N
+        veterinary_name.setToolTipText("");
+        veterinary_name.setName("client_name"); // NOI18N
 
-        client_phone1.addActionListener(new java.awt.event.ActionListener() {
+        veterinary_phone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_phone1ActionPerformed(evt);
+                veterinary_phoneActionPerformed(evt);
             }
         });
 
-        client_street_number1.addActionListener(new java.awt.event.ActionListener() {
+        veterinary_street_number.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_street_number1ActionPerformed(evt);
+                veterinary_street_numberActionPerformed(evt);
             }
         });
 
-        client_zip_code1.addActionListener(new java.awt.event.ActionListener() {
+        veterinary_zip_code.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_zip_code1ActionPerformed(evt);
+                veterinary_zip_codeActionPerformed(evt);
             }
         });
 
-        client_street_complement1.setToolTipText("");
-        client_street_complement1.addActionListener(new java.awt.event.ActionListener() {
+        veterinary_street_complement.setToolTipText("");
+        veterinary_street_complement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_street_complement1ActionPerformed(evt);
+                veterinary_street_complementActionPerformed(evt);
             }
         });
 
@@ -993,10 +1010,10 @@ public class SystemScreen extends javax.swing.JPanel {
 
         jLabel19.setText("CRMV");
 
-        client_document2.setName("client_document"); // NOI18N
-        client_document2.addActionListener(new java.awt.event.ActionListener() {
+        veterinary_crmv.setName("client_document"); // NOI18N
+        veterinary_crmv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_document2ActionPerformed(evt);
+                veterinary_crmvActionPerformed(evt);
             }
         });
 
@@ -1013,38 +1030,38 @@ public class SystemScreen extends javax.swing.JPanel {
                         .addComponent(jButton4))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(client_phone1, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+                            .addComponent(veterinary_phone, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
                             .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(client_email1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(veterinary_email, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(client_name1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                            .addComponent(veterinary_name, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(client_document1)
+                            .addComponent(veterinary_document)
                             .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(client_document2)
+                            .addComponent(veterinary_crmv)
                             .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel9Layout.createSequentialGroup()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(client_zip_code1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
+                            .addComponent(veterinary_zip_code, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel9Layout.createSequentialGroup()
                                 .addGap(8, 8, 8)
-                                .addComponent(client_street_number1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(veterinary_street_number, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(client_street_complement1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                            .addComponent(veterinary_street_complement, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE)
                             .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, 255, Short.MAX_VALUE))))
                 .addGap(8, 8, 8))
         );
@@ -1059,20 +1076,20 @@ public class SystemScreen extends javax.swing.JPanel {
                             .addComponent(jLabel13))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(client_document1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(client_name1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(veterinary_document, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(veterinary_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
                         .addComponent(jLabel19)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(client_document2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(veterinary_crmv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel15)
                     .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(client_phone1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(client_email1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(veterinary_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(veterinary_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16)
@@ -1080,9 +1097,9 @@ public class SystemScreen extends javax.swing.JPanel {
                     .addComponent(jLabel20))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(client_zip_code1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(client_street_number1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(client_street_complement1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(veterinary_zip_code, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(veterinary_street_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(veterinary_street_complement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
@@ -1094,6 +1111,11 @@ public class SystemScreen extends javax.swing.JPanel {
         jLabel21.setText("Lista de veterinários");
 
         jTable5.setModel(new VeterinaryTableModel(Controller.Service.retrieveAllVeterinarians()));
+        jTable5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jTable5MousePressed(evt);
+            }
+        });
         jScrollPane5.setViewportView(jTable5);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
@@ -1104,7 +1126,7 @@ public class SystemScreen extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 600, Short.MAX_VALUE)
                     .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -1172,33 +1194,33 @@ public class SystemScreen extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_specie_nameActionPerformed
 
-    private void client_document1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_document1ActionPerformed
+    private void veterinary_documentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veterinary_documentActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_client_document1ActionPerformed
+    }//GEN-LAST:event_veterinary_documentActionPerformed
 
-    private void client_phone1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_phone1ActionPerformed
+    private void veterinary_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veterinary_phoneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_client_phone1ActionPerformed
+    }//GEN-LAST:event_veterinary_phoneActionPerformed
 
-    private void client_street_number1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_street_number1ActionPerformed
+    private void veterinary_street_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veterinary_street_numberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_client_street_number1ActionPerformed
+    }//GEN-LAST:event_veterinary_street_numberActionPerformed
 
-    private void client_zip_code1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_zip_code1ActionPerformed
+    private void veterinary_zip_codeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veterinary_zip_codeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_client_zip_code1ActionPerformed
+    }//GEN-LAST:event_veterinary_zip_codeActionPerformed
 
-    private void client_street_complement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_street_complement1ActionPerformed
+    private void veterinary_street_complementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veterinary_street_complementActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_client_street_complement1ActionPerformed
+    }//GEN-LAST:event_veterinary_street_complementActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void client_document2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_document2ActionPerformed
+    private void veterinary_crmvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veterinary_crmvActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_client_document2ActionPerformed
+    }//GEN-LAST:event_veterinary_crmvActionPerformed
 
     private void animal_birthdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_animal_birthdateActionPerformed
         // TODO add your handling code here:
@@ -1233,10 +1255,6 @@ public class SystemScreen extends javax.swing.JPanel {
         client_street_complement.setText(client.getStreetComplement());
     }//GEN-LAST:event_jTable1MousePressed
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
-
     private void jTable3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MousePressed
         // TODO add your handling code here:
         Object data = ((GenericTableModel) jTable3.getModel()).getItem(jTable3.getSelectedRow());
@@ -1263,30 +1281,78 @@ public class SystemScreen extends javax.swing.JPanel {
         Service.retrieveAllSpecies().forEach(item -> animal_specie_id.addItem(item.getName())); // animal.getSpecieId()
     }//GEN-LAST:event_jTable4MousePressed
 
+    private void jTable8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable8MousePressed
+        // TODO add your handling code here:
+        Object data = ((GenericTableModel) jTable8.getModel()).getItem(jTable8.getSelectedRow());
+        Service.setMedicalAppointment(data);
+        MedicalAppointment medical_appointment = Service.getMedicalAppointment();
+        
+        date_appointment.setText(medical_appointment.getDateAppointment());
+        history.setText(medical_appointment.getHistory());
+        Service.retrieveAllTreatments().forEach(item -> treatment_id.addItem(String.valueOf(item.getId())));
+        Service.retrieveAllVeterinarians().forEach(item -> veterinary_id.addItem(item.getName()));
+    }//GEN-LAST:event_jTable8MousePressed
+
+    private void jTable7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable7MousePressed
+        // TODO add your handling code here:
+        Object data = ((GenericTableModel) jTable7.getModel()).getItem(jTable7.getSelectedRow());
+        Service.setMedicalExam(data);
+        MedicalExam medical_exam = Service.getMedicalExam();
+        
+        exam_description.setText(medical_exam.getExamDescription());
+        Service.retrieveAllMedicalAppointments().forEach(item -> medical_appointment_id.addItem(String.valueOf(item.getId())));
+    }//GEN-LAST:event_jTable7MousePressed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jTable6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable6MousePressed
+        // TODO add your handling code here:
+        Object data = ((GenericTableModel) jTable6.getModel()).getItem(jTable6.getSelectedRow());
+        Service.setTreatment(data);
+        Treatment treatment = Service.getTreatment();
+        
+        start_date.setText(treatment.getStartDate());
+        final_date.setText(treatment.getFinalDate());
+        Service.retrieveAllAnimals().forEach(item -> animal_id.addItem(String.valueOf(treatment.getAnimalId())));
+    }//GEN-LAST:event_jTable6MousePressed
+
+    private void jTable5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable5MousePressed
+        // TODO add your handling code here:
+        Object data = ((GenericTableModel) jTable5.getModel()).getItem(jTable5.getSelectedRow());
+        Service.setVeterinary(data);        
+        Veterinary veterinary = Service.getVeterinary();
+        
+        veterinary_name.setText(veterinary.getName());
+        veterinary_document.setText(veterinary.getDocument());
+        veterinary_phone.setText(veterinary.getPhone());
+        veterinary_email.setText(veterinary.getEmail());
+        veterinary_zip_code.setText(veterinary.getZipCode());
+        veterinary_street_number.setText(String.valueOf(veterinary.getStreetNumber()));
+        veterinary_street_complement.setText(veterinary.getStreetComplement());
+        veterinary_crmv.setText(veterinary.getCrmv());
+    }//GEN-LAST:event_jTable5MousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField animal_birthdate;
     private javax.swing.JComboBox<String> animal_client_id;
+    private javax.swing.JComboBox<String> animal_id;
     private javax.swing.JTextField animal_name;
     private javax.swing.JComboBox<String> animal_sex;
     private javax.swing.JComboBox<String> animal_specie_id;
     private javax.swing.JTextField client_document;
-    private javax.swing.JTextField client_document1;
-    private javax.swing.JTextField client_document2;
     private javax.swing.JTextField client_email;
-    private javax.swing.JTextField client_email1;
     private javax.swing.JTextField client_name;
-    private javax.swing.JTextField client_name1;
-    private javax.swing.JTextField client_name5;
-    private javax.swing.JTextField client_name6;
     private javax.swing.JTextField client_phone;
-    private javax.swing.JTextField client_phone1;
     private javax.swing.JTextField client_street_complement;
-    private javax.swing.JTextField client_street_complement1;
     private javax.swing.JTextField client_street_number;
-    private javax.swing.JTextField client_street_number1;
     private javax.swing.JTextField client_zip_code;
-    private javax.swing.JTextField client_zip_code1;
+    private javax.swing.JTextField date_appointment;
+    private javax.swing.JTextArea exam_description;
+    private javax.swing.JFormattedTextField final_date;
+    private javax.swing.JTextArea history;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton15;
@@ -1301,11 +1367,6 @@ public class SystemScreen extends javax.swing.JPanel {
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -1377,8 +1438,18 @@ public class SystemScreen extends javax.swing.JPanel {
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JComboBox<String> medical_appointment_id;
     private javax.swing.JTextField specie_name;
+    private javax.swing.JFormattedTextField start_date;
+    private javax.swing.JComboBox<String> treatment_id;
+    private javax.swing.JTextField veterinary_crmv;
+    private javax.swing.JTextField veterinary_document;
+    private javax.swing.JTextField veterinary_email;
+    private javax.swing.JComboBox<String> veterinary_id;
+    private javax.swing.JTextField veterinary_name;
+    private javax.swing.JTextField veterinary_phone;
+    private javax.swing.JTextField veterinary_street_complement;
+    private javax.swing.JTextField veterinary_street_number;
+    private javax.swing.JTextField veterinary_zip_code;
     // End of variables declaration//GEN-END:variables
 }

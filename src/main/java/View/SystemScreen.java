@@ -1184,10 +1184,32 @@ public class SystemScreen extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        Service.createClient(
+                client_name.getText(),
+                client_document.getText(),
+                client_phone.getText(),
+                client_email.getText(), 
+                client_zip_code.getText(), 
+                Integer.valueOf(client_street_number.getText()), 
+                client_street_complement.getText()
+        );
+        client_name.setText(null);
+        client_document.setText(null);
+        client_phone.setText(null);
+        client_email.setText(null);
+        client_zip_code.setText(null); 
+        client_street_number.setText(null);
+        client_street_complement.setText(null);
+        
+        jTable1.setModel(new View.ClientTableModel(Controller.Service.retrieveAllClients()));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        Service.createSpecie(specie_name.getText());
+        specie_name.setText(null);
+        
+        jTable3.setModel(new View.SpecieTableModel(Controller.Service.retrieveAllSpecies()));
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void specie_nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_specie_nameActionPerformed
@@ -1245,14 +1267,6 @@ public class SystemScreen extends javax.swing.JPanel {
         Client client = Service.getClient();
         
         jTable2.setModel(new AnimalTableModel(Controller.Service.retrieveAnimalsByClientID(data)));
-        
-        client_name.setText(client.getName());
-        client_document.setText(client.getDocument());
-        client_phone.setText(client.getPhone());
-        client_email.setText(client.getEmail());
-        client_zip_code.setText(client.getZipCode());
-        client_street_number.setText(String.valueOf(client.getStreetNumber()));
-        client_street_complement.setText(client.getStreetComplement());
     }//GEN-LAST:event_jTable1MousePressed
 
     private void jTable3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MousePressed
@@ -1260,8 +1274,6 @@ public class SystemScreen extends javax.swing.JPanel {
         Object data = ((GenericTableModel) jTable3.getModel()).getItem(jTable3.getSelectedRow());
         Service.setSpecie(data);
         Specie specie = Service.getSpecie();
-        
-        specie_name.setText(specie.getName());
     }//GEN-LAST:event_jTable3MousePressed
 
     private void jButton7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton7MousePressed
@@ -1274,11 +1286,9 @@ public class SystemScreen extends javax.swing.JPanel {
         Service.setAnimal(data);
         Animal animal = Service.getAnimal();
         
-        animal_name.setText(animal.getName());
-        animal_birthdate.setText(animal.getBirthdate());
-        Service.retrieveAllClients().forEach(item -> animal_client_id.addItem(item.getName()));
+        // Service.retrieveAllClients().forEach(item -> animal_client_id.addItem(item.getName()));
         // animal_sex.setText(animal.getSex());
-        Service.retrieveAllSpecies().forEach(item -> animal_specie_id.addItem(item.getName())); // animal.getSpecieId()
+        // Service.retrieveAllSpecies().forEach(item -> animal_specie_id.addItem(item.getName())); // animal.getSpecieId()
     }//GEN-LAST:event_jTable4MousePressed
 
     private void jTable8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable8MousePressed
@@ -1287,10 +1297,8 @@ public class SystemScreen extends javax.swing.JPanel {
         Service.setMedicalAppointment(data);
         MedicalAppointment medical_appointment = Service.getMedicalAppointment();
         
-        date_appointment.setText(medical_appointment.getDateAppointment());
-        history.setText(medical_appointment.getHistory());
-        Service.retrieveAllTreatments().forEach(item -> treatment_id.addItem(String.valueOf(item.getId())));
-        Service.retrieveAllVeterinarians().forEach(item -> veterinary_id.addItem(item.getName()));
+        // Service.retrieveAllTreatments().forEach(item -> treatment_id.addItem(String.valueOf(item.getId())));
+        // Service.retrieveAllVeterinarians().forEach(item -> veterinary_id.addItem(item.getName()));
     }//GEN-LAST:event_jTable8MousePressed
 
     private void jTable7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable7MousePressed

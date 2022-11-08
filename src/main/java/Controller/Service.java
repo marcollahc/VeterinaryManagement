@@ -89,12 +89,17 @@ public class Service {
         Service.selectedVeterinary = (Veterinary) veterinary;
     }
 
-    // public Animal createAnimal(String name, String birthdate, int sex, int specie_id, int client_id) {}
+    public static void createAnimal(String name, String birthdate, int sex, int specie_id, int client_id) {
+        AnimalDAO.getInstance().create(name, birthdate, sex, specie_id, client_id);
+    }
+    
     public static List<Animal> retrieveAllAnimals() {
         return AnimalDAO.getInstance().retrieveAll();
     }
     
-    // public List retrieveLastAnimal() {}
+    public List retrieveLastAnimal() {
+        return AnimalDAO.getInstance().retrieveLast();
+    }
     
     public static Animal retrieveAnimalByID(int id) {
         return AnimalDAO.getInstance().retrieveByID(id);
@@ -108,90 +113,194 @@ public class Service {
             client_id = client_row.getId();
         }
         
-        
         return AnimalDAO.getInstance().retrieveByClientID(client_id);
     }
-    // public List retrieveAnimalsBySimilarName(String name) {}
-    // public void updateAnimal(Animal animal) {}
-    // public void deleteAnimal(Animal animal) {}
     
+    public List retrieveAnimalsBySimilarName(String name) {
+        return AnimalDAO.getInstance().retrieveBySimilarName(name);
+    }
     
-    // public Client createClient(String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {}
+    public void updateAnimal(Animal animal) {
+        AnimalDAO.getInstance().update(animal);
+    }
+    
+    public void deleteAnimal(Animal animal) {
+        AnimalDAO.getInstance().delete(animal);
+    }
+    
+    public static void createClient(String name, String document, String phone, String email, String zip_code, int street_number, String street_complement) {
+        ClientDAO.getInstance().create(name, document, phone, email, zip_code, street_number, street_complement);
+    }
+    
     public static List<Client> retrieveAllClients() {
         return ClientDAO.getInstance().retrieveAll();
     }
-    // public List retrieveLastClient() {}
+    
+    public List retrieveLastClient() {
+        return AnimalDAO.getInstance().retrieveLast();
+    }
+    
     public static Client retrieveClientByID(int id) {
         return ClientDAO.getInstance().retrieveByID(id);
     }
-    // public List retrieveBySimilarName(String name) {}
-    // public void updateClient(Client client) {}
-    // public void deleteClient(Client client) {}
     
+    public List retrieveClientBySimilarName(String name) {
+        return ClientDAO.getInstance().retrieveBySimilarName(name);
+    }
     
-    // public MedicalAppointment createMedicalAppointment(String date_appointment, String history, int treatment_id, int veterinary_id) {}
+    public void updateClient(Client client) {
+        ClientDAO.getInstance().update(client);
+    }
+    
+    public void deleteClient(Client client) {
+        ClientDAO.getInstance().delete(client);
+    }
+    
+    public static void createMedicalAppointment(String date_appointment, String history, int treatment_id, int veterinary_id) {
+        MedicalAppointmentDAO.getInstance().create(date_appointment, history, treatment_id, veterinary_id);
+    }
+    
     public static List<MedicalAppointment> retrieveAllMedicalAppointments() {
         return MedicalAppointmentDAO.getInstance().retrieveAll();
     }
-    // public List retrieveLastMedicalAppointment() {}
+    
+    public List retrieveLastMedicalAppointment() {
+        return MedicalAppointmentDAO.getInstance().retrieveLast();
+    }
+
     public static MedicalAppointment retrieveMedicalAppointmentByID(int id) {
         return MedicalAppointmentDAO.getInstance().retrieveByID(id);
     }
-    // public List retrieveMedicalAppointmentByTreatmentId(int id) {}
-    // public List retrieveMedicalAppointmentByVeterinaryId(int id) {}
-    // public void updateMedicalAppointment(MedicalAppointment medical_appointment) {}
-    // public void deleteMedicalAppointment(MedicalAppointment medical_appointment) {}
+
+    public List retrieveMedicalAppointmentByTreatmentId(int id) {
+        return MedicalAppointmentDAO.getInstance().retrieveByTreatmentId(id);
+    }
+
+    public List retrieveMedicalAppointmentByVeterinaryId(int id) {
+        return MedicalAppointmentDAO.getInstance().retrieveByVeterinaryId(id);
+    }
+
+    public void updateMedicalAppointment(MedicalAppointment medical_appointment) {
+        MedicalAppointmentDAO.getInstance().update(medical_appointment);
+    }
+
+    public void deleteMedicalAppointment(MedicalAppointment medical_appointment) {
+        MedicalAppointmentDAO.getInstance().delete(medical_appointment);
+    }
     
+    public static void createMedicalExam(String exam_description, int medical_appointment_id) {
+        MedicalExamDAO.getInstance().create(exam_description, medical_appointment_id);
+    }
     
-    // public MedicalExam createMedicalExam(String exam_description, int medical_appointment_id) {}
     public static List<MedicalExam> retrieveAllMedicalExams() {
         return MedicalExamDAO.getInstance().retrieveAll();
     }
-    // public List retrieveLastMedicalExam() {}
+    
+    public List retrieveLastMedicalExam() {
+        return MedicalExamDAO.getInstance().retrieveLast();
+    }
+
     public static MedicalExam retrieveMedicalExamByID(int id) {
         return MedicalExamDAO.getInstance().retrieveByID(id);
     }
-    // public List retrieveMedicalExamByMedicalAppointmentId(String id) {}
-    // public void updateMedicalExam(MedicalExam medical_exam) {}
-    // public void deleteMedicalExam(MedicalExam medical_exam) {}
     
+    public List retrieveMedicalExamByMedicalAppointmentId(String id) {
+        return MedicalExamDAO.getInstance().retrieveByMedicalAppointmentId(id);
+    }
+
+    public void updateMedicalExam(MedicalExam medical_exam) {
+        MedicalExamDAO.getInstance().update(medical_exam);
+    }
+
+    public void deleteMedicalExam(MedicalExam medical_exam) {
+        MedicalExamDAO.getInstance().delete(medical_exam);
+    }
     
-    // public Specie createSpecie(String name) {}
+    public static void createSpecie(String name) {
+        SpecieDAO.getInstance().create(name);
+    }
+    
     public static List<Specie> retrieveAllSpecies() {
         return SpecieDAO.getInstance().retrieveAll();
     }
-    // public List retrieveLastSpecie() {}
+    
+    public List retrieveLastSpecie() {
+        return SpecieDAO.getInstance().retrieveLast();
+    }
+
     public static Specie retrieveSpecieByID(int id) {
         return SpecieDAO.getInstance().retrieveByID(id);
     }
-    // public List retrieveSpecieBySimilarName(String name) {}
-    // public void updateSpecie(Specie specie) {}
-    // public void deleteSpecie(Specie specie) {}
     
+    public List retrieveSpecieBySimilarName(String name) {
+        return SpecieDAO.getInstance().retrieveBySimilarName(name);
+    }
+
+    public void updateSpecie(Specie specie) {
+        SpecieDAO.getInstance().update(specie);
+    }
+
+    public void deleteSpecie(Specie specie) {
+        SpecieDAO.getInstance().delete(specie);
+    }
     
-    // public Treatment createTreatment(String start_date, String final_date, int animal_id) {}
+    public static void createTreatment(String start_date, String final_date, int animal_id) {
+        TreatmentDAO.getInstance().create(start_date, final_date, animal_id);
+    }
+    
     public static List<Treatment> retrieveAllTreatments() {
         return TreatmentDAO.getInstance().retrieveAll();
     }
-    // public List retrieveLastTreatment() {}
+    
+    public List retrieveLastTreatment() {
+        return TreatmentDAO.getInstance().retrieveLast();
+    }
+
     public static Treatment retrieveTreatmentByID(int id) {
         return TreatmentDAO.getInstance().retrieveByID(id);
     }
-    // public List retrieveTreatmentByAnimalId(int id) {}
-    // public List retrieveTreatmentByDate(String start_date, String final_date) {}
-    // public void updateTreatment(Treatment treatment) {}
-    // public void deleteTreatment(Treatment treatment) {}
+
+    public List retrieveTreatmentByAnimalId(int id) {
+        return TreatmentDAO.getInstance().retrieveByAnimalId(id);
+    }
+
+    public List retrieveTreatmentByDate(String start_date, String final_date) {
+        return TreatmentDAO.getInstance().retrieveByDate(start_date, final_date);
+    }
+
+    public void updateTreatment(Treatment treatment) {
+        TreatmentDAO.getInstance().update(treatment);
+    }
+
+    public void deleteTreatment(Treatment treatment) {
+        TreatmentDAO.getInstance().delete(treatment);
+    } 
     
+    public static void createVeterinary(String name, String document, String phone, String email, String zip_code, int street_number, String street_complement, String crmv) {
+        VeterinaryDAO.getInstance().create(name, document, phone, email, zip_code, street_number, street_complement, crmv);
+    }
     
-    // public Veterinary createVeterinary(String name, String document, String phone, String email, String zip_code, int street_number, String street_complement, String crmv) {}
     public static List<Veterinary> retrieveAllVeterinarians() {
         return VeterinaryDAO.getInstance().retrieveAll();
     }
-    // public List retrieveLastVeterinary() {}
+
+    public List retrieveLastVeterinary() {
+        return VeterinaryDAO.getInstance().retrieveLast();
+    }
+
     public static Veterinary retrieveVeterinaryByID(int id) {
         return VeterinaryDAO.getInstance().retrieveByID(id);
     }
-    // public List retrieveVeterinaryBySimilarName(String name) {}
-    // public void updateVeterinary(Veterinary veterinary) {}
-    // public void deleteVeterinary(Veterinary veterinary) {} */    
+    
+    public List retrieveVeterinaryBySimilarName(String name) {
+        return VeterinaryDAO.getInstance().retrieveBySimilarName(name);
+    }
+    
+    public void updateVeterinary(Veterinary veterinary) {
+        VeterinaryDAO.getInstance().update(veterinary);
+    }
+
+    public void deleteVeterinary(Veterinary veterinary) {
+        VeterinaryDAO.getInstance().delete(veterinary);
+    }
 }

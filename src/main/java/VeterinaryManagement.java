@@ -1,34 +1,9 @@
-import Model.Animal;
-import Model.AnimalDAO;
-import Model.Client;
-import Model.ClientDAO;
-import Model.MedicalAppointment;
-import Model.MedicalAppointmentDAO;
-import Model.MedicalExam;
-import Model.MedicalExamDAO;
-import Model.Specie;
-import Model.SpecieDAO;
-import Model.Treatment;
-import Model.TreatmentDAO;
-import Model.Veterinary;
-import Model.VeterinaryDAO;
 import View.SystemScreen;
-import java.util.List;
 import javax.swing.JFrame;
 
 public class VeterinaryManagement {
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                // new SystemScreen().setVisible(true);
-                JFrame frame = new JFrame("Sysvet");
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                frame.add(new SystemScreen());
-                frame.pack();
-                frame.setLocationRelativeTo(null);
-                frame.setVisible(true);
-            }
-        });
+        SystemScreen.main(args);
         
         /* System.out.println("Add client");
 

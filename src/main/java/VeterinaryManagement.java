@@ -1,8 +1,8 @@
-import View.SystemScreen;
+import View.SystemScreenBackup;
 import javax.swing.JFrame;
 
 public class VeterinaryManagement {
     public static void main(String args[]) {
-        SystemScreen.main(args);
+        SystemScreenBackup.main(args);
     }
 }

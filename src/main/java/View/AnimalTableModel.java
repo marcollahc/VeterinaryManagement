@@ -7,8 +7,6 @@ package View;
 import Model.Animal;
 import Model.Client;
 import Model.ClientDAO;
-import Model.Specie;
-import Model.SpecieDAO;
 import java.util.List;
 
 /**
@@ -17,7 +15,7 @@ import java.util.List;
  */
 public class AnimalTableModel extends GenericTableModel {
     public AnimalTableModel(List v_data) {
-        super(v_data, new String[]{"ID", "Nome", "Nascimento", "Sexo", "Espécie", "Tutor"});
+        super(v_data, new String[]{"ID", "Nome", "Tutor"});
     }
     
     @Override
@@ -28,12 +26,6 @@ public class AnimalTableModel extends GenericTableModel {
             case 1:
                 return String.class;
             case 2:
-                return String.class;
-            case 3:
-                return String.class;
-            case 4:
-                return String.class;
-            case 5:
                 return String.class;
             default:
                 throw new IndexOutOfBoundsException("column_index out of bounds");
@@ -50,13 +42,6 @@ public class AnimalTableModel extends GenericTableModel {
             case 1:
                 return animal.getName();
             case 2:
-                return animal.getBirthdate();
-            case 3:
-                return (animal.getSex() == 1) ? "Macho" : "Fêmea";
-            case 4:
-                Specie specie = SpecieDAO.getInstance().retrieveByID(animal.getSpecieId());
-                return specie.getName();
-            case 5:
                 Client client = ClientDAO.getInstance().retrieveByID(animal.getClientId());
                 return client.getName();
             default:

@@ -480,7 +480,7 @@ public class SystemScreen extends javax.swing.JFrame {
         Service.setClient(data);
         Client client = Service.getClient();
 
-        /* jTable2.setModel(new AnimalTableModel(Controller.Service.retrieveAnimalsByClientID(data))); */
+        /*==> jTable2.setModel(new AnimalTableModel(Controller.Service.retrieveAnimalsByClientID(data))); */
     }//GEN-LAST:event_jTable1MousePressed
 
     private void jTable6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable6MousePressed
@@ -527,7 +527,7 @@ public class SystemScreen extends javax.swing.JFrame {
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
         // TODO add your handling code here:
-        ClientForm client_form = new ClientForm();
+        ClientForm client_form = new ClientForm(jTable1);
         client_form.setVisible(true);
     }//GEN-LAST:event_jButton25ActionPerformed
 
@@ -539,7 +539,7 @@ public class SystemScreen extends javax.swing.JFrame {
 
     private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
         // TODO add your handling code here:
-        AnimalForm animal_form = new AnimalForm();
+        AnimalForm animal_form = new AnimalForm(jTable4);
         animal_form.setVisible(true);
     }//GEN-LAST:event_jButton28ActionPerformed
 

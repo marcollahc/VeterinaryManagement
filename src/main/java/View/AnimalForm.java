@@ -4,6 +4,18 @@
  */
 package View;
 
+import java.lang.ModuleLayer.Controller;
+import java.lang.reflect.Array;
+import java.util.List;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTable;
+
+import Controller.Service;
+import Model.Specie;
+
 /**
  *
  * @author marcos-medeiros
@@ -13,7 +25,14 @@ public class AnimalForm extends javax.swing.JFrame {
     /**
      * Creates new form AnimalFormx
      */
+    private JTable jTable = null;
+    
     public AnimalForm() {
+        initComponents();
+    }
+    
+    public AnimalForm(JTable jTable) {
+        this.jTable = jTable;
         initComponents();
     }
 
@@ -74,7 +93,7 @@ public class AnimalForm extends javax.swing.JFrame {
             }
         });
 
-        animal_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        animal_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Fêmea" }));
 
         animal_specie_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 

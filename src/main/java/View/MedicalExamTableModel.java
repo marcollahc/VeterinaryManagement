@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class MedicalExamTableModel extends GenericTableModel {
     public MedicalExamTableModel(List v_data) {
-        super(v_data, new String[]{"ID", "Descrição", "Consulta"});
+        super(v_data, new String[]{"ID", "Descrição"});
     }
     
     @Override
@@ -22,8 +22,6 @@ public class MedicalExamTableModel extends GenericTableModel {
             case 0:
                 return Integer.class;
             case 1:
-                return String.class;
-            case 2:
                 return String.class;
             default:
                 throw new IndexOutOfBoundsException("column_index out of bounds");
@@ -39,8 +37,6 @@ public class MedicalExamTableModel extends GenericTableModel {
                 return medical_exam.getId();
             case 1:
                 return medical_exam.getExamDescription();
-            case 2:
-                return medical_exam.getMedicalAppointmentId();
             default:
                 throw new IndexOutOfBoundsException("column_index out of bounds");
         }

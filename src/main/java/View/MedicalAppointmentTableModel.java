@@ -18,7 +18,7 @@ import java.util.List;
 
 public class MedicalAppointmentTableModel extends GenericTableModel {
     public MedicalAppointmentTableModel(List v_data) {
-        super(v_data, new String[]{"ID", "Data da consulta", "Histórico", "Tratamento", "Veterinário"});
+        super(v_data, new String[]{"ID", "Data da consulta", "Histórico", "Veterinário"});
     }
     
     @Override
@@ -31,8 +31,6 @@ public class MedicalAppointmentTableModel extends GenericTableModel {
             case 2:
                 return String.class;
             case 3:
-                return String.class;
-            case 4:
                 return String.class;
             default:
                 throw new IndexOutOfBoundsException("column_index out of bounds");
@@ -51,8 +49,6 @@ public class MedicalAppointmentTableModel extends GenericTableModel {
             case 2:
                 return medical_appointment.getHistory();
             case 3:
-                return medical_appointment.getTreatmentId();
-            case 4:
                 Veterinary veterinary = VeterinaryDAO.getInstance().retrieveByID(medical_appointment.getVeterinaryId());
                 return veterinary.getName();
             default:

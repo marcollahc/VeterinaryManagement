@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class ClientTableModel extends GenericTableModel {
     public ClientTableModel(List v_data) {
-        super(v_data, new String[]{"ID", "Nome", "CPF", "Telefone", "Email", "CEP", "Número", "Complemento"});
+        super(v_data, new String[]{"ID", "Nome", "CPF", "Telefone"});
     }
     
     @Override
@@ -26,14 +26,6 @@ public class ClientTableModel extends GenericTableModel {
             case 2:
                 return String.class;
             case 3:
-                return String.class;
-            case 4:
-                return String.class;
-            case 5:
-                return String.class;
-            case 6:
-                return Integer.class;
-            case 7:
                 return String.class;
             default:
                 throw new IndexOutOfBoundsException("column_index out of bounds");
@@ -53,14 +45,6 @@ public class ClientTableModel extends GenericTableModel {
                 return client.getEmail();
             case 3:
                 return client.getPhone();
-            case 4:
-                return client.getDocument();
-            case 5:
-                return client.getZipCode();
-            case 6:
-                return client.getStreetNumber();
-            case 7:
-                return client.getStreetComplement();
             default:
                 throw new IndexOutOfBoundsException("column_index out of bounds");
         }

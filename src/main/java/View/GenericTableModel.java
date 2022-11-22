@@ -56,7 +56,7 @@ public abstract class GenericTableModel extends AbstractTableModel {
 
     public void addListOfItems(List<Object> v_itens) {
         this.clear();
-        for (Object obj : v_itens){
+        for (Object obj : v_itens) {
             this.addItem(obj);
         }
     }

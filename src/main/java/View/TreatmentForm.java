@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author marcos-medeiros
@@ -15,8 +18,19 @@ public class TreatmentForm extends javax.swing.JFrame {
      */
     public TreatmentForm() {
         initComponents();
+        FillComboBox();
     }
+    
+    private void FillComboBox() {
+        List<String> animal_list = new ArrayList<String>();
+        Controller.Service.retrieveAllAnimals().forEach(animal -> animal_list.add(animal.getId() + " | " + animal.getName()));
 
+        String[] animals_array = new String[ animal_list.size() ];
+        animal_list.toArray(animals_array);
+
+        animal_id4.setModel(new javax.swing.DefaultComboBoxModel<>(animals_array)); 
+    }
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

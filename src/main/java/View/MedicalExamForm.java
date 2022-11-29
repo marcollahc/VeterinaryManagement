@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author marcos-medeiros
@@ -15,6 +18,17 @@ public class MedicalExamForm extends javax.swing.JFrame {
      */
     public MedicalExamForm() {
         initComponents();
+        FillComboBox();
+    }
+    
+    private void FillComboBox() {
+        List<String> medical_appointments_list = new ArrayList<String>();
+        Controller.Service.retrieveAllMedicalExams().forEach(medical_appointment -> medical_appointments_list.add(String.valueOf(medical_appointment.getId())));
+
+        String[] medical_appointments_array = new String[ medical_appointments_list.size() ];
+        medical_appointments_list.toArray(medical_appointments_array);
+        
+        medical_appointment_id.setModel(new javax.swing.DefaultComboBoxModel<>(medical_appointments_array));
     }
 
     /**

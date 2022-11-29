@@ -4,17 +4,9 @@
  */
 package View;
 
-import java.lang.ModuleLayer.Controller;
-import java.lang.reflect.Array;
 import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
-
-import Controller.Service;
-import Model.Specie;
+import java.util.ArrayList;
 
 /**
  *
@@ -27,13 +19,35 @@ public class AnimalForm extends javax.swing.JFrame {
      */
     private JTable jTable = null;
     
+    private void FillComboBox() {
+        animal_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0 | Macho", "1 | Fêmea" }));
+        
+        List<String> species_list = new ArrayList<String>();
+        Controller.Service.retrieveAllSpecies().forEach(specie -> species_list.add(specie.getId() + " | " + specie.getName()));
+
+        String[] species_array = new String[ species_list.size() ];
+        species_list.toArray(species_array);
+
+        animal_specie_id.setModel(new javax.swing.DefaultComboBoxModel<>(species_array));
+
+        List<String> clients_list = new ArrayList<String>();
+        Controller.Service.retrieveAllClients().forEach(client -> clients_list.add(client.getId() + " | " + client.getName()));
+
+        String[] clients_array = new String[ clients_list.size() ];
+        clients_list.toArray(clients_array);
+        
+        animal_client_id.setModel(new javax.swing.DefaultComboBoxModel<>(clients_array));
+    }
+    
     public AnimalForm() {
         initComponents();
+        FillComboBox();
     }
     
     public AnimalForm(JTable jTable) {
         this.jTable = jTable;
         initComponents();
+        FillComboBox();
     }
 
     /**
@@ -93,7 +107,7 @@ public class AnimalForm extends javax.swing.JFrame {
             }
         });
 
-        animal_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Fêmea" }));
+        animal_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         animal_specie_id.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 

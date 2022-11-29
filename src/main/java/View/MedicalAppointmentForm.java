@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author marcos-medeiros
@@ -15,6 +18,25 @@ public class MedicalAppointmentForm extends javax.swing.JFrame {
      */
     public MedicalAppointmentForm() {
         initComponents();
+        FillComboBox();
+    }
+
+    private void FillComboBox() {
+        List<String> treatments_list = new ArrayList<String>();
+        Controller.Service.retrieveAllTreatments().forEach(treatment -> treatments_list.add(String.valueOf(treatment.getId())));
+
+        String[] treatments_array = new String[ treatments_list.size() ];
+        treatments_list.toArray(treatments_array);
+        
+        treatment_id.setModel(new javax.swing.DefaultComboBoxModel<>(treatments_array));
+
+        List<String> veterinarians_list = new ArrayList<String>();
+        Controller.Service.retrieveAllVeterinarians().forEach(veterinary -> veterinarians_list.add(veterinary.getId() + " | " + veterinary.getName()));
+
+        String[] veterinarians_array = new String[ veterinarians_list.size() ];
+        veterinarians_list.toArray(veterinarians_array);
+        
+        veterinary_id.setModel(new javax.swing.DefaultComboBoxModel<>(veterinarians_array));
     }
 
     /**
@@ -85,12 +107,6 @@ public class MedicalAppointmentForm extends javax.swing.JFrame {
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addComponent(jLabel52, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))))
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addComponent(date_appointment)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                .addComponent(jScrollPane10)
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel15Layout.createSequentialGroup()
@@ -99,14 +115,26 @@ public class MedicalAppointmentForm extends javax.swing.JFrame {
                     .addGroup(jPanel15Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addComponent(jLabel56, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(veterinary_id, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(6, 6, 6))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(121, 121, 121))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(veterinary_id, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
             .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane10))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(date_appointment)))
                 .addContainerGap())
         );
         jPanel15Layout.setVerticalGroup(

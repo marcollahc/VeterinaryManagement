@@ -533,7 +533,7 @@ public class SystemScreen extends javax.swing.JFrame {
 
     private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
         // TODO add your handling code here:
-        ClientForm client_form = new ClientForm();
+        ClientForm client_form = new ClientForm(jTable1);
         client_form.setVisible(true);
     }//GEN-LAST:event_jButton26ActionPerformed
 
@@ -545,43 +545,43 @@ public class SystemScreen extends javax.swing.JFrame {
 
     private void jButton29ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton29ActionPerformed
         // TODO add your handling code here:
-        AnimalForm animal_form = new AnimalForm();
+        AnimalForm animal_form = new AnimalForm(jTable4);
         animal_form.setVisible(true);
     }//GEN-LAST:event_jButton29ActionPerformed
 
     private void jButton31ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton31ActionPerformed
         // TODO add your handling code here:
-        MedicalExamForm medical_exam_form = new MedicalExamForm();
+        MedicalExamForm medical_exam_form = new MedicalExamForm(jTable7);
         medical_exam_form.setVisible(true);
     }//GEN-LAST:event_jButton31ActionPerformed
 
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
         // TODO add your handling code here:
-        MedicalExamForm medical_exam_form = new MedicalExamForm();
+        MedicalExamForm medical_exam_form = new MedicalExamForm(jTable7);
         medical_exam_form.setVisible(true);
     }//GEN-LAST:event_jButton32ActionPerformed
 
     private void jButton34ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton34ActionPerformed
         // TODO add your handling code here:
-        MedicalAppointmentForm medical_appointment_form = new MedicalAppointmentForm();
+        MedicalAppointmentForm medical_appointment_form = new MedicalAppointmentForm(jTable8);
         medical_appointment_form.setVisible(true);
     }//GEN-LAST:event_jButton34ActionPerformed
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
         // TODO add your handling code here:
-        MedicalAppointmentForm medical_appointment_form = new MedicalAppointmentForm();
+        MedicalAppointmentForm medical_appointment_form = new MedicalAppointmentForm(jTable8);
         medical_appointment_form.setVisible(true);
     }//GEN-LAST:event_jButton35ActionPerformed
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         // TODO add your handling code here:
-        TreatmentForm treatment_form = new TreatmentForm();
+        TreatmentForm treatment_form = new TreatmentForm(jTable6);
         treatment_form.setVisible(true);
     }//GEN-LAST:event_jButton22ActionPerformed
 
     private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
         // TODO add your handling code here:
-        TreatmentForm treatment_form = new TreatmentForm();
+        TreatmentForm treatment_form = new TreatmentForm(jTable6);
         treatment_form.setVisible(true);
     }//GEN-LAST:event_jButton23ActionPerformed
 

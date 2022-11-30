@@ -4,8 +4,10 @@
  */
 package View;
 
+import Controller.Service;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JTable;
 
 /**
  *
@@ -16,7 +18,15 @@ public class TreatmentForm extends javax.swing.JFrame {
     /**
      * Creates new form TreatmentFormx
      */
+    private JTable jTable = null;
+    
     public TreatmentForm() {
+        initComponents();
+        FillComboBox();
+    }
+    
+    public TreatmentForm(JTable jTable) {
+        this.jTable = jTable;
         initComponents();
         FillComboBox();
     }
@@ -142,6 +152,15 @@ public class TreatmentForm extends javax.swing.JFrame {
 
     private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
         // TODO add your handling code here:
+        String animal_id_combobox = (String) animal_id4.getSelectedItem();
+        String[] animal_id_key_info = animal_id_combobox.split(" | ");
+        Integer key_animal_id = Integer.valueOf(animal_id_key_info[0]);
+        
+        Service.createTreatment(start_date4.getText(), final_date4.getText(), key_animal_id);
+        
+        this.jTable.setModel(new TreatmentTableModel(Service.retrieveAllTreatments()));
+        
+        super.dispose();
     }//GEN-LAST:event_jButton24ActionPerformed
 
     /**

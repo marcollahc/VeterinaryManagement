@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.Service;
 import java.util.List;
 import javax.swing.JTable;
 import java.util.ArrayList;
@@ -88,11 +89,6 @@ public class AnimalForm extends javax.swing.JFrame {
         jLabel34.setText("Espécie");
 
         animal_birthdate.setName("client_document"); // NOI18N
-        animal_birthdate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                animal_birthdateActionPerformed(evt);
-            }
-        });
 
         animal_name.setToolTipText("");
         animal_name.setName("client_name"); // NOI18N
@@ -196,12 +192,25 @@ public class AnimalForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void animal_birthdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_animal_birthdateActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_animal_birthdateActionPerformed
-
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
+        String animal_client_id_combobox = (String) animal_client_id.getSelectedItem();
+        String[] animal_client_id_key_info = animal_client_id_combobox.split(" | ");
+        Integer key_animal_client_id = Integer.valueOf(animal_client_id_key_info[0]);
+                
+        String animal_sex_combobox = (String) animal_sex.getSelectedItem();
+        String[] animal_sex_key_info = animal_sex_combobox.split(" | ");
+        Integer key_animal_sex = Integer.valueOf(animal_sex_key_info[0]);
+        
+        String animal_specie_id_combobox = (String) animal_sex.getSelectedItem();
+        String[] animal_specie_id_key_info = animal_specie_id_combobox.split(" | ");
+        Integer key_animal_specie_id = Integer.valueOf(animal_specie_id_key_info[0]);
+        
+        Service.createAnimal(animal_name.getText(), animal_birthdate.getText(), key_animal_sex, key_animal_specie_id, key_animal_client_id);
+        
+        this.jTable.setModel(new AnimalTableModel(Controller.Service.retrieveAllAnimals()));
+        
+        super.dispose();
     }//GEN-LAST:event_jButton13ActionPerformed
 
     /**

@@ -4,8 +4,10 @@
  */
 package View;
 
+import Controller.Service;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JTable;
 
 /**
  *
@@ -16,6 +18,14 @@ public class MedicalAppointmentForm extends javax.swing.JFrame {
     /**
      * Creates new form MedicalAppointmentForm
      */
+    private JTable jTable = null;
+    
+    public MedicalAppointmentForm(JTable jTable) {
+        this.jTable = jTable;
+        initComponents();
+        FillComboBox();
+    }
+    
     public MedicalAppointmentForm() {
         initComponents();
         FillComboBox();
@@ -187,6 +197,19 @@ public class MedicalAppointmentForm extends javax.swing.JFrame {
 
     private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
         // TODO add your handling code here:
+        String treatment_id_combobox = (String) treatment_id.getSelectedItem();
+        String[] treatment_id_key_info = treatment_id_combobox.split(" | ");
+        Integer key_treatment_id = Integer.valueOf(treatment_id_key_info[0]);
+        
+        String veterinary_id_combobox = (String) veterinary_id.getSelectedItem();
+        String[] veterinary_id_key_info = veterinary_id_combobox.split(" | ");
+        Integer key_veterinary_id = Integer.valueOf(veterinary_id_key_info[0]);
+        
+        Service.createMedicalAppointment(date_appointment.getText(), history.getText(), key_treatment_id, key_veterinary_id);
+        
+        this.jTable.setModel(new MedicalAppointmentTableModel(Controller.Service.retrieveAllMedicalAppointments()));
+        
+        super.dispose();
     }//GEN-LAST:event_jButton22ActionPerformed
 
     /**

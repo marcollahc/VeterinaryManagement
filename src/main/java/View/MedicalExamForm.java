@@ -4,8 +4,10 @@
  */
 package View;
 
+import Controller.Service;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JTable;
 
 /**
  *
@@ -16,7 +18,15 @@ public class MedicalExamForm extends javax.swing.JFrame {
     /**
      * Creates new form MedicalExamFormx
      */
+    private JTable jTable = null;
+    
     public MedicalExamForm() {
+        initComponents();
+        FillComboBox();
+    }
+    
+    public MedicalExamForm(JTable jTable) {
+        this.jTable = jTable;
         initComponents();
         FillComboBox();
     }
@@ -129,6 +139,15 @@ public class MedicalExamForm extends javax.swing.JFrame {
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
+        String medical_appointment_id_combobox = (String) medical_appointment_id.getSelectedItem();
+        String[] medical_appointment_id_key_info = medical_appointment_id_combobox.split(" | ");
+        Integer key_medical_appointment_id = Integer.valueOf(medical_appointment_id_key_info[0]);
+        
+        Service.createMedicalExam(exam_description.getText(), key_medical_appointment_id);
+        
+        this.jTable.setModel(new AnimalTableModel(Controller.Service.retrieveAllAnimals()));
+        
+        super.dispose();
     }//GEN-LAST:event_jButton19ActionPerformed
 
     /**

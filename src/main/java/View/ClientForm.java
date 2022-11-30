@@ -73,38 +73,9 @@ public class ClientForm extends javax.swing.JFrame {
         jLabel8.setText("Complemento");
 
         client_document.setName("client_document"); // NOI18N
-        client_document.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_documentActionPerformed(evt);
-            }
-        });
 
         client_name.setToolTipText("");
         client_name.setName("client_name"); // NOI18N
-
-        client_phone.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_phoneActionPerformed(evt);
-            }
-        });
-
-        client_street_number.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_street_numberActionPerformed(evt);
-            }
-        });
-
-        client_zip_code.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_zip_codeActionPerformed(evt);
-            }
-        });
-
-        client_street_complement.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                client_street_complementActionPerformed(evt);
-            }
-        });
 
         jButton1.setBackground(new java.awt.Color(25, 135, 84));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -183,10 +154,11 @@ public class ClientForm extends javax.swing.JFrame {
                     .addComponent(client_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(client_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel6)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(client_zip_code, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -217,26 +189,6 @@ public class ClientForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void client_documentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_documentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_documentActionPerformed
-
-    private void client_phoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_phoneActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_phoneActionPerformed
-
-    private void client_street_numberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_street_numberActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_street_numberActionPerformed
-
-    private void client_zip_codeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_zip_codeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_zip_codeActionPerformed
-
-    private void client_street_complementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_client_street_complementActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_client_street_complementActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Service.createClient(
@@ -249,7 +201,7 @@ public class ClientForm extends javax.swing.JFrame {
         client_street_complement.getText()
         );
 
-        this.jTable.setModel(new View.ClientTableModel(Controller.Service.retrieveAllClients()));
+        this.jTable.setModel(new View.ClientTableModel(Service.retrieveAllClients()));
         
         super.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

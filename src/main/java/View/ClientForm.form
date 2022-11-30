@@ -142,10 +142,12 @@
                       <Component id="client_email" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel7" alignment="1" min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel8" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -200,9 +202,6 @@
           <Properties>
             <Property name="name" type="java.lang.String" value="client_document" noResource="true"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_documentActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="client_name">
           <Properties>
@@ -211,26 +210,14 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="client_phone">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_phoneActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="client_email">
         </Component>
         <Component class="javax.swing.JTextField" name="client_street_number">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_street_numberActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="client_zip_code">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_zip_codeActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="client_street_complement">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="client_street_complementActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>

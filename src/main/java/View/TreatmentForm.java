@@ -33,7 +33,7 @@ public class TreatmentForm extends javax.swing.JDialog {
     
     private void FillComboBox() {
         List<String> animal_list = new ArrayList<String>();
-        Controller.Service.retrieveAllAnimals().forEach(animal -> animal_list.add(animal.getId() + " | " + animal.getName()));
+        Service.retrieveAllAnimals().forEach(animal -> animal_list.add(animal.getId() + " | " + animal.getName()));
 
         String[] animals_array = new String[ animal_list.size() ];
         animal_list.toArray(animals_array);

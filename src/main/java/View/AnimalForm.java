@@ -24,7 +24,7 @@ public class AnimalForm extends javax.swing.JDialog {
         animal_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0 | Macho", "1 | Fêmea" }));
         
         List<String> species_list = new ArrayList<String>();
-        Controller.Service.retrieveAllSpecies().forEach(specie -> species_list.add(specie.getId() + " | " + specie.getName()));
+        Service.retrieveAllSpecies().forEach(specie -> species_list.add(specie.getId() + " | " + specie.getName()));
 
         String[] species_array = new String[ species_list.size() ];
         species_list.toArray(species_array);
@@ -32,7 +32,7 @@ public class AnimalForm extends javax.swing.JDialog {
         animal_specie_id.setModel(new javax.swing.DefaultComboBoxModel<>(species_array));
 
         List<String> clients_list = new ArrayList<String>();
-        Controller.Service.retrieveAllClients().forEach(client -> clients_list.add(client.getId() + " | " + client.getName()));
+        Service.retrieveAllClients().forEach(client -> clients_list.add(client.getId() + " | " + client.getName()));
 
         String[] clients_array = new String[ clients_list.size() ];
         clients_list.toArray(clients_array);

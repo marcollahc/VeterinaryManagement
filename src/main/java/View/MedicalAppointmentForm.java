@@ -33,7 +33,7 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
 
     private void FillComboBox() {
         List<String> treatments_list = new ArrayList<String>();
-        Controller.Service.retrieveAllTreatments().forEach(treatment -> treatments_list.add(String.valueOf(treatment.getId())));
+        Service.retrieveAllTreatments().forEach(treatment -> treatments_list.add(String.valueOf(treatment.getId())));
 
         String[] treatments_array = new String[ treatments_list.size() ];
         treatments_list.toArray(treatments_array);
@@ -41,7 +41,7 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
         treatment_id.setModel(new javax.swing.DefaultComboBoxModel<>(treatments_array));
 
         List<String> veterinarians_list = new ArrayList<String>();
-        Controller.Service.retrieveAllVeterinarians().forEach(veterinary -> veterinarians_list.add(veterinary.getId() + " | " + veterinary.getName()));
+        Service.retrieveAllVeterinarians().forEach(veterinary -> veterinarians_list.add(veterinary.getId() + " | " + veterinary.getName()));
 
         String[] veterinarians_array = new String[ veterinarians_list.size() ];
         veterinarians_list.toArray(veterinarians_array);

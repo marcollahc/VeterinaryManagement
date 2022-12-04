@@ -104,8 +104,8 @@ public class DAO {
                     sex VARCHAR,
                     specie_id INTEGER,
                     client_id INTEGER,
-                    FOREIGN KEY (specie_id) REFERENCES specie(id),
-                    FOREIGN KEY (client_id) REFERENCES client(id)
+                    FOREIGN KEY (specie_id) REFERENCES specie(id) ON DELETE CASCADE,
+                    FOREIGN KEY (client_id) REFERENCES client(id) ON DELETE CASCADE
                 );
             """);
             executeUpdate(stmt);
@@ -118,7 +118,7 @@ public class DAO {
                     start_date VARCHAR,
                     final_date VARCHAR,
                     animal_id INTEGER,
-                    FOREIGN KEY (animal_id) REFERENCES animal(id)
+                    FOREIGN KEY (animal_id) REFERENCES animal(id) ON DELETE CASCADE
                 );
             """);
             executeUpdate(stmt);
@@ -145,8 +145,8 @@ public class DAO {
                     history VARCHAR,
                     treatment_id INTEGER,
                     veterinary_id INTEGER,
-                    FOREIGN KEY (treatment_id) REFERENCES treatment(id),
-                    FOREIGN KEY (veterinary_id) REFERENCES veterinary(id)
+                    FOREIGN KEY (treatment_id) REFERENCES treatment(id) ON DELETE CASCADE,
+                    FOREIGN KEY (veterinary_id) REFERENCES veterinary(id) ON DELETE CASCADE
                 );
             """);
             executeUpdate(stmt);
@@ -156,15 +156,9 @@ public class DAO {
                     id INTEGER PRIMARY KEY AUTOINCREMENT,
                     exam_description VARCHAR,
                     medical_appointment_id INTEGER,
-                    FOREIGN KEY (medical_appointment_id) REFERENCES medical_appointment(id)
+                    FOREIGN KEY (medical_appointment_id) REFERENCES medical_appointment(id) ON DELETE CASCADE
                 );
             """);
-            executeUpdate(stmt);
-
-            stmt = DAO.getConnection().prepareStatement("INSERT OR IGNORE INTO specie (name) VALUES ('Cachorro')");
-            executeUpdate(stmt);
-
-            stmt = DAO.getConnection().prepareStatement("INSERT OR IGNORE INTO specie (name) VALUES ('Gato')");
             executeUpdate(stmt);
 
             return true;

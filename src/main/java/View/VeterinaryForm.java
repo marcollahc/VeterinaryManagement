@@ -219,7 +219,7 @@ public class VeterinaryForm extends javax.swing.JDialog {
             veterinary_crmv.getText()
         );
 
-        this.jTable.setModel(new View.ClientTableModel(Service.retrieveAllVeterinarians()));
+        this.jTable.setModel(new View.VeterinaryTableModel(Service.retrieveAllVeterinarians()));
         
         super.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed

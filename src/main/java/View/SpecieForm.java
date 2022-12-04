@@ -4,6 +4,9 @@
  */
 package View;
 
+import Controller.Service;
+import javax.swing.JTable;
+
 /**
  *
  * @author marcos-medeiros
@@ -13,7 +16,14 @@ public class SpecieForm extends javax.swing.JDialog {
     /**
      * Creates new form SpecieForm
      */
+    private JTable jTable = null;
+    
     public SpecieForm() {
+        initComponents();
+    }
+    
+    public SpecieForm(JTable jTable) {
+        this.jTable = jTable;
         initComponents();
     }
 
@@ -100,6 +110,11 @@ public class SpecieForm extends javax.swing.JDialog {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
+        Service.createSpecie(specie_name.getText());
+        
+        this.jTable.setModel(new View.SpecieTableModel(Service.retrieveAllSpecies()));
+        
+        super.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**

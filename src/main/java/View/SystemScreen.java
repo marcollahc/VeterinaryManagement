@@ -5,11 +5,6 @@
 package View;
 
 import Controller.Service;
-import Model.Animal;
-import Model.Client;
-import Model.MedicalAppointment;
-import Model.MedicalExam;
-import Model.Treatment;
 
 /**
  *
@@ -91,6 +86,11 @@ public class SystemScreen extends javax.swing.JFrame {
         jButton24.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton24.setForeground(new java.awt.Color(255, 255, 255));
         jButton24.setText("Remover");
+        jButton24.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton24ActionPerformed(evt);
+            }
+        });
 
         jButton22.setBackground(new java.awt.Color(25, 135, 84));
         jButton22.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -667,18 +667,18 @@ public class SystemScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Object data = ((GenericTableModel) jTable1.getModel()).getItem(jTable1.getSelectedRow());
         Service.setClient(data);
-        Client client = Service.getClient();
-
-        /*==> jTable2.setModel(new AnimalTableModel(Controller.Service.retrieveAnimalsByClientID(data))); */
+        
+        /* Client client = Service.getClient();
+        ==> jTable2.setModel(new AnimalTableModel(Controller.Service.retrieveAnimalsByClientID(data))); */
     }//GEN-LAST:event_jTable1MousePressed
 
     private void jTable6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable6MousePressed
         // TODO add your handling code here:
         Object data = ((GenericTableModel) jTable6.getModel()).getItem(jTable6.getSelectedRow());
         Service.setTreatment(data);
-        Treatment treatment = Service.getTreatment();
-
-        /* start_date.setText(treatment.getStartDate());
+        
+        /* Treatment treatment = Service.getTreatment();
+        start_date.setText(treatment.getStartDate());
         final_date.setText(treatment.getFinalDate());
         Service.retrieveAllAnimals().forEach(item -> animal_id.addItem(String.valueOf(treatment.getAnimalId()))); */
     }//GEN-LAST:event_jTable6MousePressed
@@ -687,9 +687,9 @@ public class SystemScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Object data = ((GenericTableModel) jTable8.getModel()).getItem(jTable8.getSelectedRow());
         Service.setMedicalAppointment(data);
-        MedicalAppointment medical_appointment = Service.getMedicalAppointment();
-
-        /* Service.retrieveAllTreatments().forEach(item -> treatment_id.addItem(String.valueOf(item.getId())));
+        
+        /* MedicalAppointment medical_appointment = Service.getMedicalAppointment();
+        Service.retrieveAllTreatments().forEach(item -> treatment_id.addItem(String.valueOf(item.getId())));
         Service.retrieveAllVeterinarians().forEach(item -> veterinary_id.addItem(item.getName())); */
     }//GEN-LAST:event_jTable8MousePressed
 
@@ -697,9 +697,9 @@ public class SystemScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Object data = ((GenericTableModel) jTable7.getModel()).getItem(jTable7.getSelectedRow());
         Service.setMedicalExam(data);
-        MedicalExam medical_exam = Service.getMedicalExam();
-
-        /* exam_description.setText(medical_exam.getExamDescription());
+        
+        /* MedicalExam medical_exam = Service.getMedicalExam();
+        exam_description.setText(medical_exam.getExamDescription());
         Service.retrieveAllMedicalAppointments().forEach(item -> medical_appointment_id.addItem(String.valueOf(item.getId()))); */
     }//GEN-LAST:event_jTable7MousePressed
 
@@ -707,11 +707,11 @@ public class SystemScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
         Object data = ((GenericTableModel) jTable4.getModel()).getItem(jTable4.getSelectedRow());
         Service.setAnimal(data);
-        Animal animal = Service.getAnimal();
-
-        // Service.retrieveAllClients().forEach(item -> animal_client_id.addItem(item.getName()));
-        // animal_sex.setText(animal.getSex());
-        // Service.retrieveAllSpecies().forEach(item -> animal_specie_id.addItem(item.getName())); // animal.getSpecieId()
+        
+        /* Animal animal = Service.getAnimal();
+        Service.retrieveAllClients().forEach(item -> animal_client_id.addItem(item.getName()));
+        animal_sex.setText(animal.getSex());
+        Service.retrieveAllSpecies().forEach(item -> animal_specie_id.addItem(item.getName())); // animal.getSpecieId() */
     }//GEN-LAST:event_jTable4MousePressed
 
     private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
@@ -776,35 +776,48 @@ public class SystemScreen extends javax.swing.JFrame {
 
     private void jButton38ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton38ActionPerformed
         // TODO add your handling code here:
-        VeterinaryForm veterinary_form = new VeterinaryForm();
+        VeterinaryForm veterinary_form = new VeterinaryForm(jTable5);
         veterinary_form.setVisible(true);
     }//GEN-LAST:event_jButton38ActionPerformed
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
         // TODO add your handling code here:
-        VeterinaryForm veterinary_form = new VeterinaryForm();
+        VeterinaryForm veterinary_form = new VeterinaryForm(jTable5);
         veterinary_form.setVisible(true);
     }//GEN-LAST:event_jButton39ActionPerformed
 
     private void jTable5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable5MousePressed
         // TODO add your handling code here:
+        Object data = ((GenericTableModel) jTable5.getModel()).getItem(jTable5.getSelectedRow());
+        Service.setVeterinary(data);
     }//GEN-LAST:event_jTable5MousePressed
 
     private void jButton41ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton41ActionPerformed
         // TODO add your handling code here:
-        SpecieForm specie_form = new SpecieForm();
+        SpecieForm specie_form = new SpecieForm(jTable3);
         specie_form.setVisible(true);
     }//GEN-LAST:event_jButton41ActionPerformed
 
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
         // TODO add your handling code here:
-        SpecieForm specie_form = new SpecieForm();
+        SpecieForm specie_form = new SpecieForm(jTable3);
         specie_form.setVisible(true);
     }//GEN-LAST:event_jButton42ActionPerformed
 
     private void jTable3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable3MousePressed
         // TODO add your handling code here:
+        Object data = ((GenericTableModel) jTable3.getModel()).getItem(jTable3.getSelectedRow());
+        Service.setSpecie(data);
     }//GEN-LAST:event_jTable3MousePressed
+
+    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
+        // TODO add your handling code here:        
+        if (!Service.getTreatment().equals(null)) {
+            new Service().deleteTreatment(Service.getTreatment());
+            
+            this.jTable6.setModel(new TreatmentTableModel(Service.retrieveAllTreatments()));
+        }
+    }//GEN-LAST:event_jButton24ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -61,7 +61,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel28" alignment="0" min="-2" pref="67" max="-2" attributes="0"/>
-                              <Component id="veterinary_phone2" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
+                              <Component id="veterinary_phone" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -70,7 +70,7 @@
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="veterinary_email2" max="32767" attributes="0"/>
+                                  <Component id="veterinary_email" max="32767" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -80,12 +80,12 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel32" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                                      <Component id="veterinary_zip_code2" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
+                                      <Component id="veterinary_zip_code" alignment="0" min="-2" pref="88" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="jLabel33" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="veterinary_street_number2" alignment="0" pref="75" max="32767" attributes="0"/>
+                                      <Component id="veterinary_street_number" alignment="0" pref="75" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -93,7 +93,7 @@
                                           <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="143" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="veterinary_street_complement2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="veterinary_street_complement" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -102,17 +102,17 @@
                                           <Component id="jLabel29" min="-2" pref="52" max="-2" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <Component id="veterinary_name2" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="veterinary_name" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="veterinary_document2" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <Component id="veterinary_document" alignment="0" min="-2" pref="118" max="-2" attributes="0"/>
                                       <Component id="jLabel30" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel35" alignment="0" min="-2" pref="52" max="-2" attributes="0"/>
-                                      <Component id="veterinary_crmv2" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
+                                      <Component id="veterinary_crmv" alignment="0" min="-2" pref="77" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -138,9 +138,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="veterinary_document2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="veterinary_name2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="veterinary_crmv2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="veterinary_document" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="veterinary_name" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="veterinary_crmv" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -149,8 +149,8 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="veterinary_phone2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="veterinary_email2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="veterinary_phone" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="veterinary_email" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -160,9 +160,9 @@
                   </Group>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="veterinary_zip_code2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="veterinary_street_number2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="veterinary_street_complement2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="veterinary_zip_code" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="veterinary_street_number" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="veterinary_street_complement" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jButton6" min="-2" max="-2" attributes="0"/>
@@ -207,26 +207,26 @@
             <Property name="text" type="java.lang.String" value="Complemento"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="veterinary_document2">
+        <Component class="javax.swing.JTextField" name="veterinary_document">
           <Properties>
             <Property name="name" type="java.lang.String" value="client_document" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="veterinary_name2">
+        <Component class="javax.swing.JTextField" name="veterinary_name">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="name" type="java.lang.String" value="client_name" noResource="true"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="veterinary_phone2">
+        <Component class="javax.swing.JTextField" name="veterinary_phone">
         </Component>
-        <Component class="javax.swing.JTextField" name="veterinary_email2">
+        <Component class="javax.swing.JTextField" name="veterinary_email">
         </Component>
-        <Component class="javax.swing.JTextField" name="veterinary_street_number2">
+        <Component class="javax.swing.JTextField" name="veterinary_street_number">
         </Component>
-        <Component class="javax.swing.JTextField" name="veterinary_zip_code2">
+        <Component class="javax.swing.JTextField" name="veterinary_zip_code">
         </Component>
-        <Component class="javax.swing.JTextField" name="veterinary_street_complement2">
+        <Component class="javax.swing.JTextField" name="veterinary_street_complement">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value=""/>
           </Properties>
@@ -253,7 +253,7 @@
             <Property name="text" type="java.lang.String" value="CRMV"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="veterinary_crmv2">
+        <Component class="javax.swing.JTextField" name="veterinary_crmv">
           <Properties>
             <Property name="name" type="java.lang.String" value="client_document" noResource="true"/>
           </Properties>

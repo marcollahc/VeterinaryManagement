@@ -4,6 +4,9 @@
  */
 package View;
 
+import Controller.Service;
+import javax.swing.JTable;
+
 /**
  *
  * @author marcos-medeiros
@@ -13,7 +16,14 @@ public class VeterinaryForm extends javax.swing.JDialog {
     /**
      * Creates new form VeterinaryForm
      */
+    private JTable jTable = null;
+    
     public VeterinaryForm() {
+        initComponents();
+    }
+    
+    public VeterinaryForm(JTable jTable) {
+        this.jTable = jTable;
         initComponents();
     }
 
@@ -34,16 +44,16 @@ public class VeterinaryForm extends javax.swing.JDialog {
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
-        veterinary_document2 = new javax.swing.JTextField();
-        veterinary_name2 = new javax.swing.JTextField();
-        veterinary_phone2 = new javax.swing.JTextField();
-        veterinary_email2 = new javax.swing.JTextField();
-        veterinary_street_number2 = new javax.swing.JTextField();
-        veterinary_zip_code2 = new javax.swing.JTextField();
-        veterinary_street_complement2 = new javax.swing.JTextField();
+        veterinary_document = new javax.swing.JTextField();
+        veterinary_name = new javax.swing.JTextField();
+        veterinary_phone = new javax.swing.JTextField();
+        veterinary_email = new javax.swing.JTextField();
+        veterinary_street_number = new javax.swing.JTextField();
+        veterinary_zip_code = new javax.swing.JTextField();
+        veterinary_street_complement = new javax.swing.JTextField();
         jButton6 = new javax.swing.JButton();
         jLabel35 = new javax.swing.JLabel();
-        veterinary_crmv2 = new javax.swing.JTextField();
+        veterinary_crmv = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setAlwaysOnTop(true);
@@ -64,12 +74,12 @@ public class VeterinaryForm extends javax.swing.JDialog {
 
         jLabel34.setText("Complemento");
 
-        veterinary_document2.setName("client_document"); // NOI18N
+        veterinary_document.setName("client_document"); // NOI18N
 
-        veterinary_name2.setToolTipText("");
-        veterinary_name2.setName("client_name"); // NOI18N
+        veterinary_name.setToolTipText("");
+        veterinary_name.setName("client_name"); // NOI18N
 
-        veterinary_street_complement2.setToolTipText("");
+        veterinary_street_complement.setToolTipText("");
 
         jButton6.setBackground(new java.awt.Color(25, 135, 84));
         jButton6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -83,7 +93,7 @@ public class VeterinaryForm extends javax.swing.JDialog {
 
         jLabel35.setText("CRMV");
 
-        veterinary_crmv2.setName("client_document"); // NOI18N
+        veterinary_crmv.setName("client_document"); // NOI18N
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -95,45 +105,45 @@ public class VeterinaryForm extends javax.swing.JDialog {
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel28, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(veterinary_phone2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(veterinary_phone, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addComponent(jLabel31, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(veterinary_email2)
+                                .addComponent(veterinary_email)
                                 .addContainerGap())))
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(veterinary_zip_code2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(veterinary_zip_code, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel33, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(veterinary_street_number2, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
+                                    .addComponent(veterinary_street_number, javax.swing.GroupLayout.DEFAULT_SIZE, 75, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel11Layout.createSequentialGroup()
                                         .addComponent(jLabel34)
                                         .addGap(0, 143, Short.MAX_VALUE))
-                                    .addComponent(veterinary_street_complement2)))
+                                    .addComponent(veterinary_street_complement)))
                             .addGroup(jPanel11Layout.createSequentialGroup()
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel11Layout.createSequentialGroup()
                                         .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(veterinary_name2))
+                                    .addComponent(veterinary_name))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(veterinary_document2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(veterinary_document, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel35, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(veterinary_crmv2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(veterinary_crmv, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap())))
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addContainerGap()
@@ -150,17 +160,17 @@ public class VeterinaryForm extends javax.swing.JDialog {
                     .addComponent(jLabel35))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(veterinary_document2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(veterinary_name2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(veterinary_crmv2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(veterinary_document, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(veterinary_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(veterinary_crmv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
                     .addComponent(jLabel28))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(veterinary_phone2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(veterinary_email2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(veterinary_phone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(veterinary_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
@@ -168,9 +178,9 @@ public class VeterinaryForm extends javax.swing.JDialog {
                     .addComponent(jLabel34))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(veterinary_zip_code2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(veterinary_street_number2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(veterinary_street_complement2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(veterinary_zip_code, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(veterinary_street_number, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(veterinary_street_complement, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton6)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -198,6 +208,20 @@ public class VeterinaryForm extends javax.swing.JDialog {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        Service.createVeterinary(
+            veterinary_name.getText(),
+            veterinary_document.getText(),
+            veterinary_phone.getText(),
+            veterinary_email.getText(),
+            veterinary_zip_code.getText(),
+            Integer.valueOf(veterinary_street_number.getText()),
+            veterinary_street_complement.getText(),
+            veterinary_crmv.getText()
+        );
+
+        this.jTable.setModel(new View.ClientTableModel(Service.retrieveAllVeterinarians()));
+        
+        super.dispose();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
@@ -236,25 +260,7 @@ public class VeterinaryForm extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
@@ -263,32 +269,14 @@ public class VeterinaryForm extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField veterinary_crmv;
-    private javax.swing.JTextField veterinary_crmv1;
-    private javax.swing.JTextField veterinary_crmv2;
     private javax.swing.JTextField veterinary_document;
-    private javax.swing.JTextField veterinary_document1;
-    private javax.swing.JTextField veterinary_document2;
     private javax.swing.JTextField veterinary_email;
-    private javax.swing.JTextField veterinary_email1;
-    private javax.swing.JTextField veterinary_email2;
     private javax.swing.JTextField veterinary_name;
-    private javax.swing.JTextField veterinary_name1;
-    private javax.swing.JTextField veterinary_name2;
     private javax.swing.JTextField veterinary_phone;
-    private javax.swing.JTextField veterinary_phone1;
-    private javax.swing.JTextField veterinary_phone2;
     private javax.swing.JTextField veterinary_street_complement;
-    private javax.swing.JTextField veterinary_street_complement1;
-    private javax.swing.JTextField veterinary_street_complement2;
     private javax.swing.JTextField veterinary_street_number;
-    private javax.swing.JTextField veterinary_street_number1;
-    private javax.swing.JTextField veterinary_street_number2;
     private javax.swing.JTextField veterinary_zip_code;
-    private javax.swing.JTextField veterinary_zip_code1;
-    private javax.swing.JTextField veterinary_zip_code2;
     // End of variables declaration//GEN-END:variables
 }

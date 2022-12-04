@@ -13,7 +13,7 @@ import javax.swing.JTable;
  *
  * @author marcos-medeiros
  */
-public class MedicalAppointmentForm extends javax.swing.JFrame {
+public class MedicalAppointmentForm extends javax.swing.JDialog {
 
     /**
      * Creates new form MedicalAppointmentForm

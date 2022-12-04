@@ -13,7 +13,7 @@ import javax.swing.JTable;
  *
  * @author marcos-medeiros
  */
-public class TreatmentForm extends javax.swing.JFrame {
+public class TreatmentForm extends javax.swing.JDialog {
 
     /**
      * Creates new form TreatmentFormx

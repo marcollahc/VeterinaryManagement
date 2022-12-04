@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author marcos-medeiros
  */
-public class AnimalForm extends javax.swing.JFrame {
+public class AnimalForm extends javax.swing.JDialog {
 
     /**
      * Creates new form AnimalFormx

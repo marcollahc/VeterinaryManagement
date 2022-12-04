@@ -11,7 +11,7 @@ import javax.swing.JTable;
  *
  * @author marcos-medeiros
  */
-public class ClientForm extends javax.swing.JFrame {
+public class ClientForm extends javax.swing.JDialog {
 
     /**
      * Creates new form ClientForm

@@ -13,7 +13,7 @@ import javax.swing.JTable;
  *
  * @author marcos-medeiros
  */
-public class MedicalExamForm extends javax.swing.JFrame {
+public class MedicalExamForm extends javax.swing.JDialog {
 
     /**
      * Creates new form MedicalExamFormx

@@ -41,8 +41,6 @@ public class MedicalExamForm extends javax.swing.JDialog {
         FillFieldForm();
     }
     
-    public void FillFieldForm() {}
-    
     private void FillComboBox() {
         List<String> medical_appointments_list = new ArrayList<String>();
         Service.retrieveAllMedicalAppointments().forEach(medical_appointment -> medical_appointments_list.add(String.valueOf(medical_appointment.getId())));
@@ -52,6 +50,8 @@ public class MedicalExamForm extends javax.swing.JDialog {
         
         medical_appointment_id.setModel(new javax.swing.DefaultComboBoxModel<>(medical_appointments_array));
     }
+    
+    public void FillFieldForm() {}
 
     /**
      * This method is called from within the constructor to initialize the form.

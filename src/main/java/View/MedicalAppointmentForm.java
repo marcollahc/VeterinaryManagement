@@ -6,6 +6,7 @@ package View;
 
 import Controller.Service;
 import Model.MedicalAppointment;
+import static Model.Utils.setComboBoxSelectedValue;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTable;
@@ -40,8 +41,6 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
         FillComboBox();
         FillFieldForm();
     }
-    
-    public void FillFieldForm() {}
 
     private void FillComboBox() {
         List<String> treatments_list = new ArrayList<String>();
@@ -59,6 +58,17 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
         veterinarians_list.toArray(veterinarians_array);
         
         veterinary_id.setModel(new javax.swing.DefaultComboBoxModel<>(veterinarians_array));
+    }
+    
+    public void FillFieldForm() {
+        date_appointment.setText(rowSelected.getDateAppointment());
+        history.setText(rowSelected.getHistory());        
+        
+        String treatment_id_option = this.rowSelected.getTreatmentId()+ " | ";        
+        setComboBoxSelectedValue(treatment_id, treatment_id_option);
+        
+        String veterinary_id_option = this.rowSelected.getVeterinaryId()+ " | ";        
+        setComboBoxSelectedValue(veterinary_id, veterinary_id_option);
     }
 
     /**

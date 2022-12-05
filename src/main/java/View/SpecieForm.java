@@ -5,6 +5,7 @@
 package View;
 
 import Controller.Service;
+import Model.Specie;
 import javax.swing.JTable;
 
 /**
@@ -17,6 +18,7 @@ public class SpecieForm extends javax.swing.JDialog {
      * Creates new form SpecieForm
      */
     private JTable jTable = null;
+    private Specie rowSelected = null;
     
     public SpecieForm() {
         initComponents();
@@ -25,6 +27,17 @@ public class SpecieForm extends javax.swing.JDialog {
     public SpecieForm(JTable jTable) {
         this.jTable = jTable;
         initComponents();
+    }
+    
+    public SpecieForm(JTable jTable, Specie rowSelected) {
+        this.jTable = jTable;
+        this.rowSelected = rowSelected;
+        initComponents();
+        FillFieldForm();
+    }
+    
+    public void FillFieldForm() {
+        specie_name.setText(this.rowSelected.getName());
     }
 
     /**
@@ -110,7 +123,11 @@ public class SpecieForm extends javax.swing.JDialog {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        Service.createSpecie(specie_name.getText());
+        if (this.rowSelected == null) {
+            Service.createSpecie(specie_name.getText());
+        } else {
+            
+        }
         
         this.jTable.setModel(new View.SpecieTableModel(Service.retrieveAllSpecies()));
         

@@ -5,6 +5,7 @@
 package View;
 
 import Controller.Service;
+import Model.MedicalExam;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTable;
@@ -16,9 +17,10 @@ import javax.swing.JTable;
 public class MedicalExamForm extends javax.swing.JDialog {
 
     /**
-     * Creates new form MedicalExamFormx
+     * Creates new form MedicalExamForm
      */
     private JTable jTable = null;
+    private MedicalExam rowSelected = null;
     
     public MedicalExamForm() {
         initComponents();
@@ -31,14 +33,22 @@ public class MedicalExamForm extends javax.swing.JDialog {
         FillComboBox();
     }
     
+    public MedicalExamForm(JTable jTable, MedicalExam rowSelected) {
+        this.jTable = jTable;
+        this.rowSelected = rowSelected;
+        initComponents();
+        FillComboBox();
+        FillFieldForm();
+    }
+    
+    public void FillFieldForm() {}
+    
     private void FillComboBox() {
         List<String> medical_appointments_list = new ArrayList<String>();
-        Service.retrieveAllMedicalExams().forEach(medical_appointment -> medical_appointments_list.add(String.valueOf(medical_appointment.getId())));
+        Service.retrieveAllMedicalAppointments().forEach(medical_appointment -> medical_appointments_list.add(String.valueOf(medical_appointment.getId())));
 
         String[] medical_appointments_array = new String[ medical_appointments_list.size() ];
         medical_appointments_list.toArray(medical_appointments_array);
-        
-        System.out.println(medical_appointments_array);
         
         medical_appointment_id.setModel(new javax.swing.DefaultComboBoxModel<>(medical_appointments_array));
     }
@@ -128,7 +138,7 @@ public class MedicalExamForm extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 279, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(8, 8, 8)
@@ -145,9 +155,16 @@ public class MedicalExamForm extends javax.swing.JDialog {
         String[] medical_appointment_id_key_info = medical_appointment_id_combobox.split(" | ");
         Integer key_medical_appointment_id = Integer.valueOf(medical_appointment_id_key_info[0]);
         
-        Service.createMedicalExam(exam_description.getText(), key_medical_appointment_id);
+        if (this.rowSelected == null) {
+            Service.createMedicalExam(
+                    exam_description.getText(), 
+                    key_medical_appointment_id
+            );
+        } else {
+            
+        }
         
-        this.jTable.setModel(new AnimalTableModel(Controller.Service.retrieveAllAnimals()));
+        this.jTable.setModel(new MedicalExamTableModel(Controller.Service.retrieveAllMedicalExams()));
         
         super.dispose();
     }//GEN-LAST:event_jButton19ActionPerformed

@@ -5,6 +5,7 @@
 package View;
 
 import Controller.Service;
+import Model.Treatment;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTable;
@@ -19,6 +20,7 @@ public class TreatmentForm extends javax.swing.JDialog {
      * Creates new form TreatmentFormx
      */
     private JTable jTable = null;
+    private Treatment rowSelected = null;
     
     public TreatmentForm() {
         initComponents();
@@ -30,6 +32,16 @@ public class TreatmentForm extends javax.swing.JDialog {
         initComponents();
         FillComboBox();
     }
+    
+    public TreatmentForm(JTable jTable, Treatment rowSelected) {
+        this.jTable = jTable;
+        this.rowSelected = rowSelected;
+        initComponents();
+        FillComboBox();
+        FillFieldForm();
+    }
+    
+    public void FillFieldForm() {}
     
     private void FillComboBox() {
         List<String> animal_list = new ArrayList<String>();
@@ -156,7 +168,15 @@ public class TreatmentForm extends javax.swing.JDialog {
         String[] animal_id_key_info = animal_id_combobox.split(" | ");
         Integer key_animal_id = Integer.valueOf(animal_id_key_info[0]);
         
-        Service.createTreatment(start_date4.getText(), final_date4.getText(), key_animal_id);
+        if (this.rowSelected == null) {
+            Service.createTreatment(
+                    start_date4.getText(), 
+                    final_date4.getText(), 
+                    key_animal_id
+            );
+        } else {
+            
+        }
         
         this.jTable.setModel(new TreatmentTableModel(Service.retrieveAllTreatments()));
         

@@ -5,6 +5,7 @@
 package View;
 
 import Controller.Service;
+import Model.Veterinary;
 import javax.swing.JTable;
 
 /**
@@ -17,6 +18,7 @@ public class VeterinaryForm extends javax.swing.JDialog {
      * Creates new form VeterinaryForm
      */
     private JTable jTable = null;
+    private Veterinary rowSelected = null;
     
     public VeterinaryForm() {
         initComponents();
@@ -25,6 +27,24 @@ public class VeterinaryForm extends javax.swing.JDialog {
     public VeterinaryForm(JTable jTable) {
         this.jTable = jTable;
         initComponents();
+    }
+    
+    public VeterinaryForm(JTable jTable, Veterinary rowSelected) {
+        this.jTable = jTable;
+        this.rowSelected = rowSelected;
+        initComponents();
+        FillFieldForm();
+    }
+    
+    public void FillFieldForm() {
+        veterinary_name.setText(this.rowSelected.getName());
+        veterinary_document.setText(this.rowSelected.getDocument());
+        veterinary_crmv.setText(this.rowSelected.getCrmv());
+        veterinary_phone.setText(this.rowSelected.getPhone());
+        veterinary_email.setText(this.rowSelected.getEmail());
+        veterinary_zip_code.setText(this.rowSelected.getZipCode());
+        veterinary_street_number.setText(String.valueOf(this.rowSelected.getStreetNumber()));
+        veterinary_street_complement.setText(this.rowSelected.getStreetComplement());
     }
 
     /**
@@ -208,16 +228,28 @@ public class VeterinaryForm extends javax.swing.JDialog {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        Service.createVeterinary(
-            veterinary_name.getText(),
-            veterinary_document.getText(),
-            veterinary_phone.getText(),
-            veterinary_email.getText(),
-            veterinary_zip_code.getText(),
-            Integer.valueOf(veterinary_street_number.getText()),
-            veterinary_street_complement.getText(),
-            veterinary_crmv.getText()
-        );
+        if (this.rowSelected == null) {
+            Service.createVeterinary(
+                veterinary_name.getText(),
+                veterinary_document.getText(),
+                veterinary_phone.getText(),
+                veterinary_email.getText(),
+                veterinary_zip_code.getText(),
+                Integer.valueOf(veterinary_street_number.getText()),
+                veterinary_street_complement.getText(),
+                veterinary_crmv.getText()
+            );
+        } else {
+            this.rowSelected.setName(veterinary_name.getText());
+            this.rowSelected.setDocument(veterinary_document.getText());
+            this.rowSelected.setCrmv(veterinary_document.getText());
+            this.rowSelected.setPhone(veterinary_phone.getText());
+            this.rowSelected.setEmail(veterinary_email.getText());
+            this.rowSelected.setZipCode(veterinary_zip_code.getText());
+            this.rowSelected.setStreetNumber(Integer.valueOf(veterinary_street_number.getText()));
+            this.rowSelected.setStreetComplement(veterinary_street_complement.getText());
+            new Service().updateVeterinary(this.rowSelected);
+        }
 
         this.jTable.setModel(new View.VeterinaryTableModel(Service.retrieveAllVeterinarians()));
         

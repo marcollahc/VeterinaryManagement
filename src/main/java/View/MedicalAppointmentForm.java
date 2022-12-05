@@ -5,6 +5,7 @@
 package View;
 
 import Controller.Service;
+import Model.MedicalAppointment;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTable;
@@ -19,6 +20,7 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
      * Creates new form MedicalAppointmentForm
      */
     private JTable jTable = null;
+    private MedicalAppointment rowSelected = null;
     
     public MedicalAppointmentForm(JTable jTable) {
         this.jTable = jTable;
@@ -30,6 +32,16 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
         initComponents();
         FillComboBox();
     }
+    
+    public MedicalAppointmentForm(JTable jTable, MedicalAppointment rowSelected) {
+        this.jTable = jTable;
+        this.rowSelected = rowSelected;
+        initComponents();
+        FillComboBox();
+        FillFieldForm();
+    }
+    
+    public void FillFieldForm() {}
 
     private void FillComboBox() {
         List<String> treatments_list = new ArrayList<String>();
@@ -205,7 +217,16 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
         String[] veterinary_id_key_info = veterinary_id_combobox.split(" | ");
         Integer key_veterinary_id = Integer.valueOf(veterinary_id_key_info[0]);
         
-        Service.createMedicalAppointment(date_appointment.getText(), history.getText(), key_treatment_id, key_veterinary_id);
+        if (this.rowSelected == null) {
+            Service.createMedicalAppointment(
+                    date_appointment.getText(), 
+                    history.getText(), 
+                    key_treatment_id, 
+                    key_veterinary_id
+            );        
+        } else {
+            
+        }
         
         this.jTable.setModel(new MedicalAppointmentTableModel(Controller.Service.retrieveAllMedicalAppointments()));
         

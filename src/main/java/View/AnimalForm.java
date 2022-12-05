@@ -4,7 +4,10 @@
  */
 package View;
 
+import Model.Utils;
 import Controller.Service;
+import Model.Animal;
+import static Model.Utils.setComboBoxSelectedValue;
 import java.util.List;
 import javax.swing.JTable;
 import java.util.ArrayList;
@@ -16,9 +19,29 @@ import java.util.ArrayList;
 public class AnimalForm extends javax.swing.JDialog {
 
     /**
-     * Creates new form AnimalFormx
+     * Creates new form AnimalForm
      */
     private JTable jTable = null;
+    private Animal rowSelected = null;
+    
+    public AnimalForm() {
+        initComponents();
+        FillComboBox();
+    }
+    
+    public AnimalForm(JTable jTable) {
+        this.jTable = jTable;
+        initComponents();
+        FillComboBox();
+    }
+    
+    public AnimalForm(JTable jTable, Animal rowSelected) {
+        this.jTable = jTable;
+        this.rowSelected = rowSelected;
+        initComponents();
+        FillComboBox();
+        FillFieldForm();
+    }
     
     private void FillComboBox() {
         animal_sex.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0 | Macho", "1 | Fêmea" }));
@@ -40,15 +63,18 @@ public class AnimalForm extends javax.swing.JDialog {
         animal_client_id.setModel(new javax.swing.DefaultComboBoxModel<>(clients_array));
     }
     
-    public AnimalForm() {
-        initComponents();
-        FillComboBox();
-    }
-    
-    public AnimalForm(JTable jTable) {
-        this.jTable = jTable;
-        initComponents();
-        FillComboBox();
+    public void FillFieldForm() {
+        animal_name.setText(this.rowSelected.getName());
+        animal_birthdate.setText(this.rowSelected.getBirthdate());
+        
+        String client_id_find = this.rowSelected.getClientId() + " | ";
+        setComboBoxSelectedValue(animal_client_id, client_id_find);
+        
+        String animal_sex_option = this.rowSelected.getSpecieId() + " | ";        
+        setComboBoxSelectedValue(animal_sex, animal_sex_option);
+        
+        String animal_specie_id_option = this.rowSelected.getSpecieId()  + " | ";
+        setComboBoxSelectedValue(animal_specie_id, animal_specie_id_option);
     }
 
     /**
@@ -127,21 +153,25 @@ public class AnimalForm extends javax.swing.JDialog {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
                         .addGap(8, 8, 8)
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel29, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addComponent(jLabel29, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(animal_name))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(animal_birthdate, javax.swing.GroupLayout.DEFAULT_SIZE, 269, Short.MAX_VALUE)
-                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)
+                            .addComponent(animal_birthdate)))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel12Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(animal_sex, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel32, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(animal_sex, 0, 118, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(animal_specie_id, 0, 137, Short.MAX_VALUE)
-                            .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(animal_specie_id, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel12Layout.createSequentialGroup()
+                                .addComponent(jLabel34, javax.swing.GroupLayout.DEFAULT_SIZE, 101, Short.MAX_VALUE)
+                                .addGap(188, 188, 188)))))
                 .addGap(8, 8, 8))
         );
         jPanel12Layout.setVerticalGroup(
@@ -195,18 +225,30 @@ public class AnimalForm extends javax.swing.JDialog {
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
         String animal_client_id_combobox = (String) animal_client_id.getSelectedItem();
-        String[] animal_client_id_key_info = animal_client_id_combobox.split(" | ");
-        Integer key_animal_client_id = Integer.valueOf(animal_client_id_key_info[0]);
+        Integer key_animal_client_id = Integer.valueOf(Utils.getComboBoxIdValue(animal_client_id_combobox));
                 
         String animal_sex_combobox = (String) animal_sex.getSelectedItem();
-        String[] animal_sex_key_info = animal_sex_combobox.split(" | ");
-        Integer key_animal_sex = Integer.valueOf(animal_sex_key_info[0]);
+        Integer key_animal_sex = Integer.valueOf(Utils.getComboBoxIdValue(animal_sex_combobox));
         
-        String animal_specie_id_combobox = (String) animal_sex.getSelectedItem();
-        String[] animal_specie_id_key_info = animal_specie_id_combobox.split(" | ");
-        Integer key_animal_specie_id = Integer.valueOf(animal_specie_id_key_info[0]);
+        String animal_specie_id_combobox = (String) animal_specie_id.getSelectedItem();
+        Integer key_animal_specie_id = Integer.valueOf(Utils.getComboBoxIdValue(animal_specie_id_combobox));
         
-        Service.createAnimal(animal_name.getText(), animal_birthdate.getText(), key_animal_sex, key_animal_specie_id, key_animal_client_id);
+        if (this.rowSelected == null) {
+            Service.createAnimal(
+                    animal_name.getText(), 
+                    animal_birthdate.getText(), 
+                    key_animal_sex, 
+                    key_animal_specie_id, 
+                    key_animal_client_id
+            );
+        } else {
+            this.rowSelected.setName(animal_name.getText());
+            this.rowSelected.setBirthdate(animal_birthdate.getText());
+            this.rowSelected.setSex(key_animal_sex);
+            this.rowSelected.setSpecieId(key_animal_specie_id);
+            this.rowSelected.setClientId(key_animal_client_id);
+            new Service().updateAnimal(rowSelected);
+        }
         
         this.jTable.setModel(new AnimalTableModel(Controller.Service.retrieveAllAnimals()));
         

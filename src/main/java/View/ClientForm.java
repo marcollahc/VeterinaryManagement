@@ -5,6 +5,7 @@
 package View;
 
 import Controller.Service;
+import Model.Client;
 import javax.swing.JTable;
 
 /**
@@ -17,6 +18,7 @@ public class ClientForm extends javax.swing.JDialog {
      * Creates new form ClientForm
      */
     private JTable jTable = null;
+    private Client rowSelected = null;
     
     public ClientForm() {
         initComponents();
@@ -25,6 +27,23 @@ public class ClientForm extends javax.swing.JDialog {
     public ClientForm(JTable jTable) {
         this.jTable = jTable;
         initComponents();
+    }
+    
+    public ClientForm(JTable jTable, Client rowSelected) {
+        this.jTable = jTable;
+        this.rowSelected = rowSelected;
+        initComponents();
+        FillFieldForm();
+    }
+    
+    public void FillFieldForm() {
+        client_name.setText(this.rowSelected.getName());
+        client_document.setText(this.rowSelected.getDocument());
+        client_phone.setText(this.rowSelected.getPhone());
+        client_email.setText(this.rowSelected.getEmail());
+        client_zip_code.setText(this.rowSelected.getZipCode());
+        client_street_number.setText(String.valueOf(this.rowSelected.getStreetNumber()));
+        client_street_complement.setText(this.rowSelected.getStreetComplement());
     }
 
     /**
@@ -121,17 +140,17 @@ public class ClientForm extends javax.swing.JDialog {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel8Layout.createSequentialGroup()
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(client_zip_code, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(client_street_number))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(client_street_complement)
+                                    .addComponent(client_street_complement, javax.swing.GroupLayout.DEFAULT_SIZE, 218, Short.MAX_VALUE)
                                     .addGroup(jPanel8Layout.createSequentialGroup()
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 127, Short.MAX_VALUE)))))))
+                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))))))
                 .addGap(8, 8, 8))
         );
         jPanel8Layout.setVerticalGroup(
@@ -191,15 +210,26 @@ public class ClientForm extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        Service.createClient(
-        client_name.getText(),
-        client_document.getText(),
-        client_phone.getText(),
-        client_email.getText(),
-        client_zip_code.getText(),
-        Integer.valueOf(client_street_number.getText()),
-        client_street_complement.getText()
-        );
+        if (this.rowSelected == null) {
+            Service.createClient(
+                client_name.getText(),
+                client_document.getText(),
+                client_phone.getText(),
+                client_email.getText(),
+                client_zip_code.getText(),
+                Integer.valueOf(client_street_number.getText()),
+                client_street_complement.getText()
+            ); 
+        } else {
+            this.rowSelected.setName(client_name.getText());
+            this.rowSelected.setDocument(client_document.getText());
+            this.rowSelected.setPhone(client_phone.getText());
+            this.rowSelected.setEmail(client_email.getText());
+            this.rowSelected.setZipCode(client_zip_code.getText());
+            this.rowSelected.setStreetNumber(Integer.valueOf(client_street_number.getText()));
+            this.rowSelected.setStreetComplement(client_street_complement.getText());
+            new Service().updateClient(this.rowSelected);
+        }
 
         this.jTable.setModel(new View.ClientTableModel(Service.retrieveAllClients()));
         

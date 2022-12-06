@@ -23,13 +23,13 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
     private JTable jTable = null;
     private MedicalAppointment rowSelected = null;
     
-    public MedicalAppointmentForm(JTable jTable) {
-        this.jTable = jTable;
+    public MedicalAppointmentForm() {
         initComponents();
         FillComboBox();
     }
     
-    public MedicalAppointmentForm() {
+    public MedicalAppointmentForm(JTable jTable) {
+        this.jTable = jTable;
         initComponents();
         FillComboBox();
     }
@@ -64,7 +64,7 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
         date_appointment.setText(rowSelected.getDateAppointment());
         history.setText(rowSelected.getHistory());        
         
-        String treatment_id_option = this.rowSelected.getTreatmentId() + " | ";        
+        String treatment_id_option = String.valueOf(this.rowSelected.getTreatmentId());        
         setComboBoxSelectedValue(treatment_id, treatment_id_option);
         
         String veterinary_id_option = this.rowSelected.getVeterinaryId() + " | ";        

@@ -67,8 +67,8 @@ public class AnimalForm extends javax.swing.JDialog {
         animal_name.setText(this.rowSelected.getName());
         animal_birthdate.setText(this.rowSelected.getBirthdate());
         
-        String client_id_find = this.rowSelected.getClientId() + " | ";
-        setComboBoxSelectedValue(animal_client_id, client_id_find);
+        String client_id_option = this.rowSelected.getClientId() + " | ";
+        setComboBoxSelectedValue(animal_client_id, client_id_option);
         
         String animal_sex_option = this.rowSelected.getSpecieId() + " | ";        
         setComboBoxSelectedValue(animal_sex, animal_sex_option);

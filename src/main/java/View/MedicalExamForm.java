@@ -6,6 +6,7 @@ package View;
 
 import Controller.Service;
 import Model.MedicalExam;
+import static Model.Utils.setComboBoxSelectedValue;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTable;
@@ -51,7 +52,12 @@ public class MedicalExamForm extends javax.swing.JDialog {
         medical_appointment_id.setModel(new javax.swing.DefaultComboBoxModel<>(medical_appointments_array));
     }
     
-    public void FillFieldForm() {}
+    public void FillFieldForm() {
+        exam_description.setText(rowSelected.getExamDescription());
+        
+        String medical_appointment_id_option = String.valueOf(this.rowSelected.getMedicalAppointmentId());        
+        setComboBoxSelectedValue(medical_appointment_id, medical_appointment_id_option);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -161,7 +167,9 @@ public class MedicalExamForm extends javax.swing.JDialog {
                     key_medical_appointment_id
             );
         } else {
-            
+            this.rowSelected.setExamDescription(exam_description.getText());
+            this.rowSelected.setMedicalAppointmentId(key_medical_appointment_id);
+            new Service().updateMedicalExam(rowSelected);
         }
         
         this.jTable.setModel(new MedicalExamTableModel(Controller.Service.retrieveAllMedicalExams()));

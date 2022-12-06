@@ -6,6 +6,7 @@ package View;
 
 import Controller.Service;
 import Model.Treatment;
+import static Model.Utils.setComboBoxSelectedValue;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JTable;
@@ -41,8 +42,6 @@ public class TreatmentForm extends javax.swing.JDialog {
         FillFieldForm();
     }
     
-    public void FillFieldForm() {}
-    
     private void FillComboBox() {
         List<String> animal_list = new ArrayList<String>();
         Service.retrieveAllAnimals().forEach(animal -> animal_list.add(animal.getId() + " | " + animal.getName()));
@@ -51,6 +50,14 @@ public class TreatmentForm extends javax.swing.JDialog {
         animal_list.toArray(animals_array);
 
         animal_id4.setModel(new javax.swing.DefaultComboBoxModel<>(animals_array)); 
+    }
+    
+    public void FillFieldForm() { 
+        final_date4.setText(this.rowSelected.getFinalDate());
+        start_date4.setText(this.rowSelected.getStartDate());
+        
+        String animal_id_option = this.rowSelected.getAnimalId() + " | ";
+        setComboBoxSelectedValue(animal_id4, animal_id_option);
     }
  
     /**

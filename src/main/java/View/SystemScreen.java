@@ -737,7 +737,7 @@ public class SystemScreen extends javax.swing.JFrame {
 
     private void jButton32ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton32ActionPerformed
         // TODO add your handling code here:
-        MedicalExamForm medical_exam_form = new MedicalExamForm(jTable7);
+        MedicalExamForm medical_exam_form = new MedicalExamForm(jTable7, Service.getMedicalExam());
         medical_exam_form.setVisible(true);
     }//GEN-LAST:event_jButton32ActionPerformed
 
@@ -773,7 +773,7 @@ public class SystemScreen extends javax.swing.JFrame {
 
     private void jButton39ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton39ActionPerformed
         // TODO add your handling code here:
-        VeterinaryForm veterinary_form = new VeterinaryForm(jTable5);
+        VeterinaryForm veterinary_form = new VeterinaryForm(jTable5, Service.getVeterinary());
         veterinary_form.setVisible(true);
     }//GEN-LAST:event_jButton39ActionPerformed
 
@@ -791,7 +791,7 @@ public class SystemScreen extends javax.swing.JFrame {
 
     private void jButton42ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton42ActionPerformed
         // TODO add your handling code here:
-        SpecieForm specie_form = new SpecieForm(jTable3);
+        SpecieForm specie_form = new SpecieForm(jTable3, Service.getSpecie());
         specie_form.setVisible(true);
     }//GEN-LAST:event_jButton42ActionPerformed
 
@@ -828,7 +828,7 @@ public class SystemScreen extends javax.swing.JFrame {
         try {
             new Service().deleteAnimal(Service.getAnimal());
             
-            this.jTable4.setModel(new TreatmentTableModel(Service.retrieveAllTreatments()));
+            this.jTable4.setModel(new AnimalTableModel(Service.retrieveAllAnimals()));
         } catch (Exception ex) {
             Logger.getLogger(SystemScreen.class.getName()).log(Level.SEVERE, null, ex);
         }

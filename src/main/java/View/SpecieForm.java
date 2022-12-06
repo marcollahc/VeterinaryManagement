@@ -126,7 +126,8 @@ public class SpecieForm extends javax.swing.JDialog {
         if (this.rowSelected == null) {
             Service.createSpecie(specie_name.getText());
         } else {
-            
+            this.rowSelected.setName(specie_name.getText());
+            new Service().updateSpecie(rowSelected);
         }
         
         this.jTable.setModel(new View.SpecieTableModel(Service.retrieveAllSpecies()));

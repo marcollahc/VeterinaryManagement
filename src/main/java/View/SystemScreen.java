@@ -749,7 +749,7 @@ public class SystemScreen extends javax.swing.JFrame {
 
     private void jButton35ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton35ActionPerformed
         // TODO add your handling code here:
-        MedicalAppointmentForm medical_appointment_form = new MedicalAppointmentForm(jTable8);
+        MedicalAppointmentForm medical_appointment_form = new MedicalAppointmentForm(jTable8, Service.getMedicalAppointment());
         medical_appointment_form.setVisible(true);
     }//GEN-LAST:event_jButton35ActionPerformed
 

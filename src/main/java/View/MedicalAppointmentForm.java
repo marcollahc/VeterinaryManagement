@@ -64,10 +64,10 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
         date_appointment.setText(rowSelected.getDateAppointment());
         history.setText(rowSelected.getHistory());        
         
-        String treatment_id_option = this.rowSelected.getTreatmentId()+ " | ";        
+        String treatment_id_option = this.rowSelected.getTreatmentId() + " | ";        
         setComboBoxSelectedValue(treatment_id, treatment_id_option);
         
-        String veterinary_id_option = this.rowSelected.getVeterinaryId()+ " | ";        
+        String veterinary_id_option = this.rowSelected.getVeterinaryId() + " | ";        
         setComboBoxSelectedValue(veterinary_id, veterinary_id_option);
     }
 
@@ -235,7 +235,11 @@ public class MedicalAppointmentForm extends javax.swing.JDialog {
                     key_veterinary_id
             );        
         } else {
-            
+            this.rowSelected.setDateAppointment(date_appointment.getText());
+            this.rowSelected.setHistory(history.getText());
+            this.rowSelected.setTreatmentId(key_treatment_id);
+            this.rowSelected.setVeterinaryId(key_veterinary_id);
+            new Service().updateMedicalAppointment(rowSelected);
         }
         
         this.jTable.setModel(new MedicalAppointmentTableModel(Controller.Service.retrieveAllMedicalAppointments()));
